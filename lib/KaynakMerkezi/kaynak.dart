@@ -38,12 +38,6 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
                 actions: [
                   IconButton(onPressed: () {}, icon: Icon(Icons.search)),
                 ],
-                flexibleSpace: FlexibleSpaceBar(
-                  background: Image.network(
-                    "Gradient background for youtube header_ Градиентный фон для шапки ютуб, free use.jpeg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
               ),
             ],
           ),
@@ -51,107 +45,115 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
+            Center(
+              child: Wrap(
+                spacing: 20,
+                runSpacing: 20.0,
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        onTap();
+                      },
+                      child: CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("images/emirhoca.png"),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        onTap();
+                      },
+                      child: CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("images/ecem.png"),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20)
-              ],
+                ],
+              ),
             ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
+            Center(
+              child: Wrap(
+                spacing: 20,
+                runSpacing: 20.0,
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        onTap();
+                      },
+                      child: CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("images/ebrar.png"),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        onTap();
+                      },
+                      child: CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("images/sena.png"),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      onTap();
-                    },
-                    child: CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage("images/fotor-ai-2023120805151.jpg"),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-            SizedBox(height: 20)
+            Center(
+              child: Wrap(
+                spacing: 20,
+                runSpacing: 20.0,
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        onTap();
+                      },
+                      child: CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("images/elif.png"),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        onTap();
+                      },
+                      child: CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("images/gizem.png"),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Center(
+              child: Wrap(
+                spacing: 20,
+                runSpacing: 20.0,
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        onTap();
+                      },
+                      child: CircleAvatar(
+                        radius: 70,
+                        backgroundImage: AssetImage("images/sena.png"),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
