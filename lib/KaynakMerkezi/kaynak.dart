@@ -147,7 +147,7 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
                       },
                       child: CircleAvatar(
                         radius: 70,
-                        backgroundImage: AssetImage("images/sena.png"),
+                        backgroundImage: AssetImage("images/tiba.png"),
                       ),
                     ),
                   ),
