@@ -14,7 +14,7 @@ class KaynakMerkezi extends StatefulWidget {
 class _KaynakMerkeziState extends State<KaynakMerkezi> {
   Widget build(BuildContext context) {
     void onTap() {
-      print("sena");
+      print("ecem");
     }
 
     return MaterialApp(
