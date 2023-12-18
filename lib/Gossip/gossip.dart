@@ -103,72 +103,80 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [Expanded(
-            child: CustomScrollView( // Wrap your Column with SingleChildScrollView
-              slivers:[ SliverAppBar(
-                backgroundColor: Colors.black,
-                title: Text("W H I S P E R G P T"),
-                expandedHeight: 200,
-                flexibleSpace: FlexibleSpaceBar(background: Container(color: Colors.pink,)),
-              ),
-              SliverToBoxAdapter(
-                child: MasonryGridView.builder(
-                  gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+    return SafeArea(
+      child: Container(
+            decoration: BoxDecoration(
+              image:DecorationImage(
+                image: AssetImage("images/Digital-Abstract-Art-iPhone-Wallpaper.jpg"),
+                fit: BoxFit.cover),),
+      child:Scaffold(
+        backgroundColor: Colors.transparent,
+        body: 
+                  Column(          
+                          children: [Expanded(
+                            child: CustomScrollView( // Wrap your Column with SingleChildScrollView
+                  slivers:[ SliverAppBar(
+                    backgroundColor: Colors.black,
+                    title: Text("W H I S P E R G P T"),
+                    expandedHeight: 200,
+                    flexibleSpace: FlexibleSpaceBar(background: Container(color: Colors.pink,)),
                   ),
-                  physics:NeverScrollableScrollPhysics(),
-                  itemCount: i,
-                  shrinkWrap: true,
-                  itemBuilder: ((context, i) => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: containerList[i],
-                  )),
-                ),
-              ),
-              ],
-            ),
-          ),
-            Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextField(
-                      controller: textController,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: "Buraya yazın",
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            textController.clear();
-                          },
-                          icon: Icon(Icons.clear),
+                  SliverToBoxAdapter(
+                    child: MasonryGridView.builder(
+                      gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                      physics:NeverScrollableScrollPhysics(),
+                      itemCount: i,
+                      shrinkWrap: true,
+                      itemBuilder: ((context, i) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: containerList[i],
+                      )),
+                    ),
+                  ),
+                  ],
+                            ),
+                          ),
+                            Row(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextField(
+                          controller: textController,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: "Buraya yazın",
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                textController.clear();
+                              },
+                              icon: Icon(Icons.clear),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          text = textController.text;
+                          textController.clear();
+                          containerList.add(textPrinter(text));
+                          print(containerList);
+                          i++;
+                        });
+                      },
+                      icon: Icon(Icons.send),
+                      color: Colors.purple,
+                    ),
+                  ],
+                            ),
+                            ],
+                            ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      text = textController.text;
-                      textController.clear();
-                      containerList.add(textPrinter(text));
-                      print(containerList);
-                      i++;
-                    });
-                  },
-                  icon: Icon(Icons.send),
-                  color: Colors.purple,
-                ),
-              ],
-            ),
-            ],
-            ),
-      ),
-          );
+        ),
+    );
   }
 }
