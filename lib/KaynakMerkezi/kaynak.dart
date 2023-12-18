@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/KaynakMerkezi/teacher_circle.dart';
 
 void main() {
   runApp(KaynakMerkezi());
@@ -34,7 +35,7 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
                   style: TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
-                pinned: true,
+                pinned: false,
                 actions: [
                   IconButton(onPressed: () {}, icon: Icon(Icons.search)),
                 ],
@@ -45,115 +46,13 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Center(
-              child: Wrap(
-                spacing: 20,
-                runSpacing: 20.0,
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        onTap();
-                      },
-                      child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage("images/emirhoca.png"),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        onTap();
-                      },
-                      child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage("images/ecem.png"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Center(
-              child: Wrap(
-                spacing: 20,
-                runSpacing: 20.0,
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        onTap();
-                      },
-                      child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage("images/ebrar.png"),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        onTap();
-                      },
-                      child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage("images/sena.png"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Center(
-              child: Wrap(
-                spacing: 20,
-                runSpacing: 20.0,
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        onTap();
-                      },
-                      child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage("images/elif.png"),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        onTap();
-                      },
-                      child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage("images/gizem.png"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Center(
-              child: Wrap(
-                spacing: 20,
-                runSpacing: 20.0,
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        onTap();
-                      },
-                      child: CircleAvatar(
-                        radius: 70,
-                        backgroundImage: AssetImage("images/tiba.png"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            TeacherCircleAvatar("images/emirhoca.png", onTap),
+            TeacherCircleAvatar("images/ecem.png", onTap),
+            TeacherCircleAvatar("images/ebrar.png", onTap),
+            TeacherCircleAvatar("images/sena.png", onTap),
+            TeacherCircleAvatar("images/elif.png", onTap),
+            TeacherCircleAvatar("images/gizem.png", onTap),
+            TeacherCircleAvatar("images/tiba.png", onTap),
           ],
         ),
       ),
