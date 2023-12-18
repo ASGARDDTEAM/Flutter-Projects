@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/ChatterCraft/home_view.dart';
+
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
-  widgetbui
-
+  Widget build(BuildContext context) {
+    return MaterialApp(title: "Metarial app", home: HomeView());
+  }
 }
+
