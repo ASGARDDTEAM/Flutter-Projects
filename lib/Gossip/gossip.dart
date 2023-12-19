@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 5),
+      duration: Duration(seconds: 2),
     );
 
     _animationController.forward(); // Start the animation
@@ -103,74 +103,80 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView( // Wrap your Column with SingleChildScrollView
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "WhisperGPT",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: Container(
+            decoration: BoxDecoration(
+              image:DecorationImage(
+                image: AssetImage("images/Digital-Abstract-Art-iPhone-Wallpaper.jpg"),
+                fit: BoxFit.cover),),
+      child:Scaffold(
+        backgroundColor: Colors.transparent,
+        body: 
+                  Column(          
+                          children: [Expanded(
+                            child: CustomScrollView( // Wrap your Column with SingleChildScrollView
+                  slivers:[ SliverAppBar(
+                    backgroundColor: Colors.black,
+                    title: Text("W H I S P E R G P T"),
+                    expandedHeight: 200,
+                    flexibleSpace: FlexibleSpaceBar(background: Container(color: Colors.pink,)),
                   ),
-                ),
-              ),
-              MasonryGridView.builder(
-                gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                physics: AlwaysScrollableScrollPhysics(), // Make the grid scrollable
-                itemCount: i,
-                shrinkWrap: true,
-                itemBuilder: ((context, i) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: containerList[i],
-                )),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                        controller: textController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: "Buraya yazın",
-                          suffixIcon: IconButton(
-                            onPressed: () {
-                              textController.clear();
-                            },
-                            icon: Icon(Icons.clear),
+                  SliverToBoxAdapter(
+                    child: MasonryGridView.builder(
+                      gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                      physics:NeverScrollableScrollPhysics(),
+                      itemCount: i,
+                      shrinkWrap: true,
+                      itemBuilder: ((context, i) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: containerList[i],
+                      )),
+                    ),
+                  ),
+                  ],
+                            ),
+                          ),
+                            Row(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextField(
+                          controller: textController,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: "Buraya yazın",
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                textController.clear();
+                              },
+                              icon: Icon(Icons.clear),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        text = textController.text;
-                        textController.clear();
-                        containerList.add(textPrinter(text));
-                        print(containerList);
-                        i++;
-                      });
-                    },
-                    icon: Icon(Icons.send),
-                    color: Colors.purple,
-                  ),
-                ],
-              ),
-            ],
-          ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          text = textController.text;
+                          textController.clear();
+                          containerList.add(textPrinter(text));
+                          print(containerList);
+                          i++;
+                        });
+                      },
+                      icon: Icon(Icons.send),
+                      color: Colors.purple,
+                    ),
+                  ],
+                            ),
+                            ],
+                            ),
+                ),
         ),
-      ),
     );
   }
 }
