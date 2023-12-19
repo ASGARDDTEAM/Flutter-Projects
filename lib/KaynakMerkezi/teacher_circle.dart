@@ -13,23 +13,32 @@ class TeacherCircleAvatar extends StatefulWidget {
 class _TeacherCircleAvatar extends State<TeacherCircleAvatar> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Wrap(
-        spacing: 20,
-        runSpacing: 20.0,
-        children: [
-          Expanded(
-            child: InkWell(
-              onTap: () {
-                widget.onTap;
-              },
-              child: CircleAvatar(
-                radius: 70,
-                backgroundImage: AssetImage(widget.imagePath),
-              ),
+    return Container(
+      decoration: BoxDecoration(border: Border.all(color: Color.fromRGBO(255, 210, 141, 1.0))),
+      padding: EdgeInsets.all(10),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Wrap(
+              spacing: 20,
+              runSpacing: 20.0,
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: () {
+                      widget.onTap;
+                    },
+                    child: CircleAvatar(
+                      radius: 80,
+                      backgroundImage: AssetImage(widget.imagePath),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
