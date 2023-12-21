@@ -34,7 +34,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds:2),
+      duration: Duration(seconds: 2),
     );
 
     _animationController.forward(); // Start the animation
@@ -58,9 +58,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           builder: (context, child) {
             return Transform.translate(
               offset: Offset(
-                (_animationController.value *
-                    MediaQuery.of(context).size.width) -
-                    MediaQuery.of(context).size.width / 2,
+                (_animationController.value * MediaQuery.of(context).size.width) - MediaQuery.of(context).size.width / 2,
                 0.0,
               ),
               child: child,

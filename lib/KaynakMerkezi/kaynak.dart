@@ -2,39 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/KaynakMerkezi/teacher_circle.dart';
 
 void main() {
-  runApp(KaynakMerkezi());
+  runApp(const KaynakMerkezi());
 }
 
 class KaynakMerkezi extends StatefulWidget {
-  KaynakMerkezi({super.key});
+  const KaynakMerkezi({super.key});
 
+  @override
   State<KaynakMerkezi> createState() => _KaynakMerkeziState();
 }
 
 class _KaynakMerkeziState extends State<KaynakMerkezi> {
+  @override
   Widget build(BuildContext context) {
     void onTap() {
       print("ecem");
     }
 
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(255, 210, 141, 1.0))),
+      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(255, 210, 141, 1.0))),
       home: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(75),
+          preferredSize: const Size.fromHeight(75),
           child: AppBar(
-            backgroundColor: Color.fromRGBO(255, 188, 85, 1.0),
+            backgroundColor: const Color.fromRGBO(255, 188, 85, 1.0),
             leading: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.arrow_back_ios),
+              icon: const Icon(Icons.arrow_back_ios),
             ),
-            title: Text(
+            title: const Text(
               "TRAKYA ÜNİVERSİTESİ AKADEMİK KADRO",
               style: TextStyle(fontSize: 14),
               textAlign: TextAlign.center,
             ),
             actions: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
             ],
           ),
         ),
@@ -42,19 +44,25 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
           trackVisibility: true,
           thickness: 10,
           thumbVisibility: true,
-          radius: Radius.circular(20),
+          radius: const Radius.circular(20),
           interactive: true,
           child: ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) => Column(
               children: [
-                TeacherCircleAvatar("images/emirhoca.png", 1, onTap),
-                TeacherCircleAvatar("images/ecem.png", 2, onTap),
-                TeacherCircleAvatar("images/ebrar.png", 3, onTap),
-                TeacherCircleAvatar("images/sena.png", 4, onTap),
-                TeacherCircleAvatar("images/elif.png", 5, onTap),
-                TeacherCircleAvatar("images/gizem.png", 6, onTap),
-                TeacherCircleAvatar("images/tiba.png", 7, onTap),
+                TeacherCircleAvatar("images/emirhoca.png", onTap),
+                writing(1),
+                TeacherCircleAvatar("images/ecem.png", onTap),
+                writing(2),
+                TeacherCircleAvatar("images/ebrar.png", onTap),
+                writing(3),
+                TeacherCircleAvatar("images/sena.png", onTap),
+                writing(4),
+                TeacherCircleAvatar("images/elif.png", onTap),
+                writing(5),
+                TeacherCircleAvatar("images/gizem.png", onTap),
+                writing(6),
+                TeacherCircleAvatar("images/tiba.png", onTap),
               ],
             ),
           ),

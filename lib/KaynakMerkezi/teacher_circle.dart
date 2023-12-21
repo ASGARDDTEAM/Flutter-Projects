@@ -1,30 +1,19 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:flutter_project/KaynakMerkezi/teacherimagelist.dart';
 import 'package:flutter_project/KaynakMerkezi/teacherlist.dart';
 
 class TeacherCircleAvatar extends StatefulWidget {
   String imagePath;
-  int number;
   Function onTap;
 
-  TeacherCircleAvatar(this.imagePath, this.number, this.onTap);
+  TeacherCircleAvatar(this.imagePath, this.onTap);
 
   @override
   State<TeacherCircleAvatar> createState() => _TeacherCircleAvatar();
 }
 
 class _TeacherCircleAvatar extends State<TeacherCircleAvatar> {
-  late TeacherImagePath teacherImagePath;
-  late TeacherMap teacherMap;
-
-  writing(var number) {
-    ListTile(
-      title: teacherMap.dict[number["name"]],
-      subtitle: teacherMap.dict[number["email"]],
-      leading: Text(teacherMap.dict[number["git"]]),
-    );
-  }
-
   void onTap() {}
   @override
   Widget build(BuildContext context) {
@@ -50,12 +39,20 @@ class _TeacherCircleAvatar extends State<TeacherCircleAvatar> {
                     ),
                   ),
                 ),
-                writing(widget.number),
               ],
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+writing(var number) {
+  if (TeacherMap.dict.length > 0) {
+    return ListTile(
+      title: Text(TeacherMap.dict[number.toString()]["name"] + "\n" + "Email: " + TeacherMap.dict[number.toString()]["email"]),
+      subtitle: Text(TeacherMap.dict[number.toString()]["git"]),
     );
   }
 }

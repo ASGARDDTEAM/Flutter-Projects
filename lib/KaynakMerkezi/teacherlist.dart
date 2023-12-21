@@ -1,5 +1,5 @@
 class TeacherMap {
-  Map<String, dynamic> dict = {
+  static Map<String, dynamic> dict = {
     "1": {
       "name": "EMİR ÖZTÜRK",
       "email": "emirozturk@trakya.edu.tr",
