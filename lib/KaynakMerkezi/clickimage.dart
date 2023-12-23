@@ -26,7 +26,7 @@ class _ClickImageState extends State<ClickImage> {
                   ListTile(
                     title: ElevatedButton(
                         onPressed: () => {}, //DropdownButton(),
-                        child: LessonMap.dict2[widget.teacher]),
+                        child: LessonMap.dict2[widget.teacher.toString()]),
                   )
                 ],
               );
