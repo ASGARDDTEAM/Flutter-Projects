@@ -15,10 +15,6 @@ class KaynakMerkezi extends StatefulWidget {
 class _KaynakMerkeziState extends State<KaynakMerkezi> {
   @override
   Widget build(BuildContext context) {
-    void onTap() {
-      print("ecem");
-    }
-
     return MaterialApp(
       theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(255, 210, 141, 1.0))),
       home: Scaffold(
@@ -49,20 +45,15 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
           child: ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TeacherCircleAvatar("images/emirhoca.png", onTap),
-                writing(1),
-                TeacherCircleAvatar("images/ecem.png", onTap),
-                writing(2),
-                TeacherCircleAvatar("images/ebrar.png", onTap),
-                writing(3),
-                TeacherCircleAvatar("images/sena.png", onTap),
-                writing(4),
-                TeacherCircleAvatar("images/elif.png", onTap),
-                writing(5),
-                TeacherCircleAvatar("images/gizem.png", onTap),
-                writing(6),
-                TeacherCircleAvatar("images/tiba.png", onTap),
+                TeacherCircleAvatar("images/emirhoca.png", 1, "Emir ÖZTÜRK"),
+                TeacherCircleAvatar("images/ecem.png", 2, "Ecem Hatice ÖZKAN"),
+                TeacherCircleAvatar("images/ebrar.png", 3, "Ebrar TAŞDEMİR"),
+                TeacherCircleAvatar("images/sena.png", 4, "Sena AKAT"),
+                TeacherCircleAvatar("images/elif.png", 5, "İrem Elif GÜL"),
+                TeacherCircleAvatar("images/gizem.png", 6, "Zehra Gizem DUMAN"),
+                TeacherCircleAvatar("images/tiba.png", 7, "Tiba SHAHANI"),
               ],
             ),
           ),
