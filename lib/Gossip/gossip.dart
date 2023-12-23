@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_project/Gossip/model/imageDescription.dart';
+import 'package:flutter_project/Gossip/model/imageList.dart';
+import 'package:flutter_project/Gossip/model/textMessage.dart';
 import 'package:transparent_image/transparent_image.dart';
-import 'package:gossip_gpt/model/imageDescription.dart';
-import 'package:gossip_gpt/model/imageList.dart';
-import 'package:gossip_gpt/model/textMessage.dart';
-
 void main() {
   runApp(MaterialApp(home: MyHomePage()));
 }
@@ -183,7 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(15),
                               child: FadeInImage.memoryNetwork(
-                                placeholder: kTransparentImage,
+                                placeholder:kTransparentImage,
                                 image: imageList[index],
                                 fit: BoxFit.cover,
                               ),
