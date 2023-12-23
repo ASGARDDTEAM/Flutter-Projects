@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/models/slider_model.dart';
+import 'package:flutter_project/Duyurular/models/slider_model.dart';
 
 List<SliderModel> sliders = [
   SliderModel(title: "Slider 1", image: "images/download.jpg"),

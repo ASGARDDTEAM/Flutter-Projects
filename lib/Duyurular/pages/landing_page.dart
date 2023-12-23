@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/home.dart';
-
+import 'package:flutter_project/Duyurular/pages/home.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -19,7 +18,7 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             Material(
               elevation: 3.0,
-                borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
                 child: Image.asset(
@@ -54,8 +53,9 @@ class _LandingPageState extends State<LandingPage> {
               height: 40.0,
             ),
             GestureDetector(
-              onTap: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Home()));
+              onTap: () {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Home()));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width / 1.2,

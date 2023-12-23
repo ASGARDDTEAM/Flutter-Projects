@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_application_1/models/slider_model.dart';
-
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:flutter_project/Duyurular/models/slider_model.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key});
