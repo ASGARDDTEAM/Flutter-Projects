@@ -1,5 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_project/ChatterCraft/PageOne.dart';
+
+
+
+
 
 class HomeView extends StatefulWidget {
   @override
@@ -10,7 +15,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.fireplace_rounded),),
       body: SafeArea(
         child: DefaultTabController(
                  length: 2,
@@ -31,7 +35,14 @@ class _HomeViewState extends State<HomeView> {
                 )
             ],
             labelColor: Color.fromRGBO( 97, 169, 251, 1.0 ),
-            )
+            ),
+            Expanded(
+              child: TabBarView(
+                children: <Widget>[
+                  PageOne(),
+                  PageOne(),
+                ],)
+              )
           ],
         ),
       ),
