@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/KaynakMerkezi/teacher_circle.dart';
+import 'package:flutter_project/main.dart';
 
 void main() {
   runApp(const KaynakMerkezi());
@@ -23,7 +24,14 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
           child: AppBar(
             backgroundColor: const Color.fromRGBO(255, 188, 85, 1.0),
             leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
+                );
+              },
               icon: const Icon(Icons.arrow_back_ios),
             ),
             title: const Text(
