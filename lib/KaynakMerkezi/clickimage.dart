@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/KaynakMerkezi/kaynak.dart';
+import 'package:flutter_project/KaynakMerkezi/pdfmap.dart';
+import 'package:flutter_project/KaynakMerkezi/pdfpage.dart';
 import 'lessonmap.dart';
 
 // ignore: must_be_immutable
@@ -25,7 +27,7 @@ class _ClickImageState extends State<ClickImage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => KaynakMerkezi(),
+                  builder: (context) => const KaynakMerkezi(),
                 ),
               );
             }),
@@ -33,24 +35,33 @@ class _ClickImageState extends State<ClickImage> {
       body: ListView.builder(
         itemCount: LessonMap.dict2[widget.teacher.toString()].length,
         itemBuilder: (context, index) => Card(
-          child: ListTile(
+          child: ExpansionTile(
             title: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                children: List.generate(
-                  1,
-                  (subIndex) => ListTile(
-                    title: Container(
-                      child: Text(LessonMap.dict2[widget.teacher.toString()][index]),
-                    ),
-                  ),
-                ),
+                children: [
+                  Text(LessonMap.dict2[widget.teacher.toString()][index]),
+                ],
               ),
             ),
+            children: [
+              if (PdfMap.dict3.containsKey(LessonMap.dict2[widget.teacher.toString()][index]))
+                for (var pdf in PdfMap.dict3[LessonMap.dict2[widget.teacher.toString()][index]])
+                  ListTile(
+                    title: Text(pdf),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PDFPage(pdfPath: pdf),
+                        ),
+                      );
+                    },
+                  ),
+            ],
           ),
         ),
       ),
     ));
   }
 }
-//LessonMap.dict2[widget.teacher.toString()][2]
