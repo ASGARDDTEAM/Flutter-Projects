@@ -4,7 +4,13 @@ class LessonMap {
       "İŞLETİM SİSTEMLERİ",
       "GÖRSEL PROGRAMLAMA",
       "YAPAY ZEKA",
-      "C PROGRAMLAMA"
+      "BİLGİSAYAR III",
+      "BÜYÜK VERİ",
+      "C# PROGRAMLAMA",
+      "DERİN ÖĞRENME ALGORİTMALARI",
+      "İLERİ JAVA PROGRAMLAMA",
+      "NESNEYE YÖNELİK PROGRAMLAMA",
+      "PROGRAMLAMA DİLLERİNE GİRİŞ"
     ],
     "Ecem Hatice ÖZKAN": [
       "C iLE PROGRAMLAMA",
