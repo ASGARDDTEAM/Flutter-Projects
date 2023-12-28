@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:ikinci_sayfa/models/liste.dart';
-import 'package:ikinci_sayfa/models/liste_model.dart';
-import 'package:ikinci_sayfa/second_page_home.dart';
+import 'package:flutter_project/Duyurular/models/liste_model.dart';
+import 'package:flutter_project/Duyurular/models/liste.dart';
+import 'package:flutter_project/Duyurular/second_page_home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatefulWidget {

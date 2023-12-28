@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ikinci_sayfa/home.dart';
+import 'package:flutter_project/Duyurular/home.dart';
+
 
 
 void main(){

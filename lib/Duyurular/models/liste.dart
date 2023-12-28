@@ -1,4 +1,4 @@
-import 'package:ikinci_sayfa/models/liste_model.dart';
+import 'package:flutter_project/Duyurular/models/liste_model.dart';
 
 class listem{
   static List<News> newsList = [
