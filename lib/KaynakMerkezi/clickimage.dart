@@ -19,10 +19,22 @@ class _ClickImageState extends State<ClickImage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+      backgroundColor: Color.fromARGB(255, 224, 146, 236),
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(255, 188, 85, 1.0),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 149, 79, 174),
+                Colors.blueAccent,
+              ],
+              begin: Alignment.bottomLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
         leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.push(
                 context,
@@ -36,16 +48,19 @@ class _ClickImageState extends State<ClickImage> {
         itemCount: LessonMap.dict2[widget.teacher.toString()].length,
         itemBuilder: (context, index) => Card(
           child: ExpansionTile(
+            backgroundColor: const Color.fromRGBO(221, 223, 253, 1.0),
             title: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Text(LessonMap.dict2[widget.teacher.toString()][index]),
+                  Text(LessonMap.dict2[widget.teacher.toString()][index], style: TextStyle(fontFamily: "Play fair Display")),
                 ],
               ),
             ),
             children: [
-              if (PdfMap.dict3.containsKey(LessonMap.dict2[widget.teacher.toString()][index]))
+              if (PdfMap.dict3.containsKey(
+                LessonMap.dict2[widget.teacher.toString()][index],
+              ))
                 for (var pdf in PdfMap.dict3[LessonMap.dict2[widget.teacher.toString()][index]])
                   ListTile(
                     title: Text(pdf),
