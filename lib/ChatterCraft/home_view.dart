@@ -50,14 +50,7 @@ class _HomeViewState extends State<HomeView> {
                         });
                       },
                     ),
-                    PageOne(
-                      tweets: tweets,
-                      onTweetSubmitted: (Tweet tweet) {
-                        setState(() {
-                          tweets.add(tweet);
-                        });
-                      },
-                    ),
+                    PageTwo(),
                   ],
                 ),
               ),
