@@ -4,6 +4,8 @@ import 'package:flutter_project/ChatterCraft/PageOne.dart';
 import 'package:flutter_project/ChatterCraft/PageTwo.dart';
 
 
+
+
 class HomeView extends StatefulWidget {
   @override
   _HomeViewState createState() => _HomeViewState();
@@ -48,9 +50,15 @@ class _HomeViewState extends State<HomeView> {
                         });
                       },
                     ),
-                    PageTwo(),
-
-                  ]
+                    PageOne(
+                      tweets: tweets,
+                      onTweetSubmitted: (Tweet tweet) {
+                        setState(() {
+                          tweets.add(tweet);
+                        });
+                      },
+                    ),
+                  ],
                 ),
               ),
             ],
