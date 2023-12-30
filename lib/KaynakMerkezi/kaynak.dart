@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/KaynakMerkezi/teacher_circle.dart';
-import 'package:flutter_project/main.dart';
+
+import '../main/homepage.dart';
 
 void main() {
   runApp(const KaynakMerkezi());
