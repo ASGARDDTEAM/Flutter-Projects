@@ -21,6 +21,7 @@ class _ClickImageState extends State<ClickImage> {
         home: Scaffold(
       backgroundColor: Color.fromARGB(255, 224, 146, 236),
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -30,6 +31,10 @@ class _ClickImageState extends State<ClickImage> {
               ],
               begin: Alignment.bottomLeft,
               end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
             ),
           ),
         ),

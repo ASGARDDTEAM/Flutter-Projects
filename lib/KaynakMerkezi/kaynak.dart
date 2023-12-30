@@ -17,12 +17,14 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 175, 142, 187))),
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 212, 185, 222),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(75),
           child: AppBar(
+            backgroundColor: Colors.transparent,
             flexibleSpace: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -33,10 +35,11 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
                   begin: Alignment.bottomLeft,
                   end: Alignment.bottomRight,
                 ),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
+                ),
               ),
-            ),
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(0)),
             ),
             toolbarHeight: 90,
             leadingWidth: 60,
