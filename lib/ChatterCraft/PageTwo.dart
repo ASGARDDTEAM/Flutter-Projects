@@ -13,30 +13,6 @@ class _StatePageTwo extends State<PageTwo> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 149, 79, 174),
-                  Colors.blueAccent,
-                ],
-                begin: Alignment.bottomLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
-              ),
-            ),
-          ),
-          centerTitle: true,
-          title: const Text(
-            "Trends For Ceng ",
-            style: TextStyle(color: Color.fromARGB(255, 48, 47, 47), fontWeight: FontWeight.bold, fontSize: 25),
-          ),
-        ),
         body: ListView.builder(
             itemCount: ChatterListe().list.length,
             itemBuilder: (context, index) => Container(
