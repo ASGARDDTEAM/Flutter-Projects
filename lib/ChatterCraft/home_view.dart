@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_project/ChatterCraft/PageOne.dart';
 import 'package:flutter_project/ChatterCraft/PageTwo.dart';
 import 'dart:io';
 import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle; 
+import 'package:flutter_project/ChatterCraft/Tweet.dart';
+import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
 
 
 class HomeView extends StatefulWidget {
@@ -14,6 +14,12 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   List<Tweet> tweets = [];
+
+  @override
+  void initState(){
+    super.initState();
+    _loadTweetsFromFile();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,5 +66,9 @@ class _HomeViewState extends State<HomeView> {
         ),
       ),
     );
+  }
+    void _loadTweetsFromFile() async {
+    tweets = await DosyaIslemleri.readTweetsFromFile("C:\\Users\\MSI\\Desktop\\Flutter-Projects-main\\Flutter-Projects\\lib\\ChatterCraft\\texts\\HomeTexts.txt");
+    setState(() {});
   }
 }
