@@ -72,6 +72,8 @@ flutter:
     - images/
     - lib/KaynakMerkezi/documents/
     - animations/
+    
+   
 
   fonts:
       - family: Play fair Display
