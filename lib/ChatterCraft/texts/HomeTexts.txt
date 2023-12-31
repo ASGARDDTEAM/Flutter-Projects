@@ -1,1 +1,4 @@
-
+merhaba||0||false
+||1||true
+||1||true
+selammm||1||true

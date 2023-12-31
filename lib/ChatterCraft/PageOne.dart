@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_project/ChatterCraft/Tweet.dart';
+import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
+import 'dart:io';
+
 
 
 class PageOne extends StatefulWidget {
@@ -28,6 +32,7 @@ class _PageOneState extends State<PageOne> {
                 onLikePressed: () {
                   setState(() {
                     widget.tweets[index].toggleLike();
+                    _saveTweetsToFile();
                   });
                 },
               );
@@ -48,6 +53,7 @@ class _PageOneState extends State<PageOne> {
                     final newTweet = Tweet(text: tweetText);
                     widget.onTweetSubmitted(newTweet);
                     tweetController.clear();
+                    _saveTweetsToFile();
                   },
                 ),
               ),
@@ -57,6 +63,7 @@ class _PageOneState extends State<PageOne> {
                   final newTweet = Tweet(text: tweetController.text);
                   widget.onTweetSubmitted(newTweet);
                   tweetController.clear();
+                  _saveTweetsToFile();
                 },
               ),
             ],
@@ -65,24 +72,14 @@ class _PageOneState extends State<PageOne> {
       ],
     );
   }
-}
-
-class Tweet {
-  final String text;
-  int likes = 0;
-  bool isLiked = false;
-
-  Tweet({required this.text});
-
-  void toggleLike() {
-    isLiked = !isLiked;
-    if (isLiked) {
-      likes++;
-    } else {
-      likes--;
-    }
+  void _saveTweetsToFile() {
+    DosyaIslemleri.writeTweetsToFile("C:\\Users\\MSI\\Desktop\\Flutter-Projects-main\\Flutter-Projects\\lib\\ChatterCraft\\texts\\HomeTexts.txt", widget.tweets);
   }
 }
+
+
+
+
 
 class TweetCard extends StatelessWidget {
   final Tweet tweet;
