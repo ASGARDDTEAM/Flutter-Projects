@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/ChatterCraft/TagPage.dart';
 
 import 'chattercraftlist.dart';
 
@@ -18,7 +19,14 @@ class _StatePageTwo extends State<PageTwo> {
             itemBuilder: (context, index) => Container(
                   padding: EdgeInsets.all(15),
                   child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TagPage(),
+                          ),
+                        );
+                      },
                       title: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
