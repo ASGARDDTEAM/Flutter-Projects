@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_project/ChatterCraft/Tweet.dart';
 import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
-import 'dart:io';
-
-
 
 class PageOne extends StatefulWidget {
   final List<Tweet> tweets;
   final Function(Tweet) onTweetSubmitted;
 
-  PageOne({required this.tweets, required this.onTweetSubmitted});
+  PageOne({required this.tweets, required this.onTweetSubmitted, required Null Function(dynamic tweet) onLikePressed});
 
   @override
   _PageOneState createState() => _PageOneState();
@@ -72,14 +69,11 @@ class _PageOneState extends State<PageOne> {
       ],
     );
   }
+
   void _saveTweetsToFile() {
     DosyaIslemleri.writeTweetsToFile("C:\\Users\\MSI\\Desktop\\Flutter-Projects-main\\Flutter-Projects\\lib\\ChatterCraft\\texts\\HomeTexts.txt", widget.tweets);
   }
 }
-
-
-
-
 
 class TweetCard extends StatelessWidget {
   final Tweet tweet;
