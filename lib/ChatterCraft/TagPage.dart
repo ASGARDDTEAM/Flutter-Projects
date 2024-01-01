@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/ChatterCraft/home_view.dart';
 
 import 'PageOne.dart';
 import 'Tweet.dart';
@@ -15,7 +16,7 @@ class _TagPage extends State<TagPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Page Two'),
+        backgroundColor: Color.fromARGB(73, 255, 255, 255),
       ),
       body: PageOne(
         tweets: widget.tweets,

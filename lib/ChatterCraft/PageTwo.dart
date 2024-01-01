@@ -27,7 +27,7 @@ class _StatePageTwo extends State<PageTwo> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => TagPage(
-                              tweets: const [],
+                              tweets: [],
                               onTweetSubmitted: (Tweet) {},
                             ),
                           ),
