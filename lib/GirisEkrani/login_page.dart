@@ -89,7 +89,7 @@ bool signUserIn(BuildContext context) {
 
               // Logo
               Image.asset(
-                "image/logo.png",
+                "images/logo.png",
                
                 ),
               
