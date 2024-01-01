@@ -19,9 +19,9 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 175, 142, 187))),
+      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 175, 142, 187))),
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 212, 185, 222),
+        backgroundColor: const Color.fromARGB(255, 212, 185, 222),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(75),
           child: AppBar(
@@ -50,7 +50,7 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomePage(),
+                    builder: (context) => const HomePage(),
                   ),
                 );
               },
@@ -75,6 +75,7 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
           radius: const Radius.circular(20),
           interactive: true,
           child: ListView.builder(
+            primary: true,
             itemCount: 1,
             itemBuilder: (context, index) => Column(
               mainAxisAlignment: MainAxisAlignment.center,

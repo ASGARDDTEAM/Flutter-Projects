@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/ChatterCraft/TagPage.dart';
 
+import 'Tweet.dart';
 import 'chattercraftlist.dart';
 
 class PageTwo extends StatefulWidget {
+  late final List<Tweet> tweets;
+  late final Function(Tweet) onTweetSubmitted;
   @override
   State<PageTwo> createState() => _StatePageTwo();
 }
@@ -23,7 +26,10 @@ class _StatePageTwo extends State<PageTwo> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => TagPage(),
+                            builder: (context) => TagPage(
+                              tweets: const [],
+                              onTweetSubmitted: (Tweet) {},
+                            ),
                           ),
                         );
                       },
