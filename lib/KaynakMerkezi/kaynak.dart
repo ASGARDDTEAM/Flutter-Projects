@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/KaynakMerkezi/teacher_circle.dart';
-import 'package:flutter_project/main.dart';
+
+import '../main/homepage.dart';
 
 void main() {
   runApp(const KaynakMerkezi());
@@ -17,12 +18,33 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(255, 210, 141, 1.0))),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 175, 142, 187))),
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 212, 185, 222),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(75),
           child: AppBar(
-            backgroundColor: const Color.fromRGBO(255, 188, 85, 1.0),
+            backgroundColor: Colors.transparent,
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color.fromARGB(255, 149, 79, 174),
+                    Color.fromARGB(255, 85, 142, 239),
+                  ],
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
+                ),
+              ),
+            ),
+            toolbarHeight: 90,
+            leadingWidth: 60,
+            elevation: 8,
             leading: IconButton(
               onPressed: () {
                 Navigator.push(
@@ -34,14 +56,16 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
               },
               icon: const Icon(Icons.arrow_back_ios),
             ),
+            centerTitle: true,
             title: const Text(
-              "TRAKYA ÜNİVERSİTESİ AKADEMİK KADRO",
-              style: TextStyle(fontSize: 14),
+              "AKADEMİK KADRO",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w900,
+                color: Color.fromARGB(255, 96, 23, 129),
+              ),
               textAlign: TextAlign.center,
             ),
-            actions: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-            ],
           ),
         ),
         body: Scrollbar(

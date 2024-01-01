@@ -12,7 +12,7 @@ class TeacherMap {
     },
     "3": {
       "name": "EBRAR TAŞDEMİR",
-      "email": "ebrartasdemir@trakya.edu.tr",
+      "email": "ebrartasdemr@trakya.edu.tr",
       "git": "https://github.com/liranah"
     },
     "4": {
@@ -27,7 +27,7 @@ class TeacherMap {
     },
     "6": {
       "name": "ZEHRA GİZEM DUMAN",
-      "email": "zgizemduman@trakya.edu.tr",
+      "email": "gizemduman@trakya.edu.tr",
       "git": "https://github.com/zehragizem"
     },
     "7": {
