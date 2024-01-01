@@ -89,34 +89,29 @@ class TweetCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(tweet.text),
-            SizedBox(height: 8.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        tweet.isLiked ? Icons.favorite : Icons.favorite_border,
-                        color: tweet.isLiked ? Colors.red : null,
-                      ),
-                      onPressed: onLikePressed,
-                    ),
-                    Text('${tweet.likes} Likes'),
-                  ],
+    return ListTile(
+      contentPadding: EdgeInsets.all(8.0),
+      leading: Icon(
+        Icons.account_box,
+        color: Colors.grey,
+      ),
+      title: Text(tweet.text),
+      subtitle: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(
+                  tweet.isLiked ? Icons.favorite : Icons.favorite_border,
+                  color: tweet.isLiked ? Colors.red : null,
                 ),
-              ],
-            ),
-          ],
-        ),
+                onPressed: onLikePressed,
+              ),
+              Text('${tweet.likes} Likes'),
+            ],
+          ),
+        ],
       ),
     );
   }
