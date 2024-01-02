@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/Duyurular/home.dart';
-
+import 'package:ikinci_sayfa/home.dart';
 
 
 void main(){
@@ -11,7 +10,6 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Home()
     );
   }

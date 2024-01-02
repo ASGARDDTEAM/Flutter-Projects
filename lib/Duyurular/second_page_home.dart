@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/Duyurular/home.dart';
-import 'package:flutter_project/Duyurular/models/liste_model.dart';
-import 'package:flutter_project/Duyurular/models/liste.dart';
+import 'package:ikinci_sayfa/home.dart';
+import 'package:ikinci_sayfa/models/liste.dart';
+import 'package:ikinci_sayfa/models/liste_model.dart';
 
 class SecondHomePage extends StatefulWidget {
   final News shpage;
@@ -55,11 +55,11 @@ class _SecondHomePageState extends State<SecondHomePage> {
               title: Align(
                 alignment: Alignment.bottomLeft, // Container'ı alt sol köşeye hizala
                 child: Container(
-                  color: Colors.black.withOpacity(0.6),
+                
                   child: Text(
                     currentNews.title,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 16.0,
                     ),
                   ),
@@ -90,7 +90,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
                 borderRadius: BorderRadius.circular(0),
                 child: Container(
                   height: 600,
-                  color: Color.fromARGB(255, 143, 186, 251),
+                  color: Colors.transparent,
                   child:Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
