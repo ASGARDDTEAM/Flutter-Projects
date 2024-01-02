@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'gossip.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,8 +14,7 @@ class SplashPage extends StatefulWidget {
   _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage>
-    with TickerProviderStateMixin {
+class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   late AnimationController _animationController;
 
   @override
@@ -30,7 +28,7 @@ class _SplashPageState extends State<SplashPage>
 
     _animationController.forward(); // Start the animation
 
-    Future.delayed(Duration(seconds:4), () {
+    Future.delayed(Duration(seconds: 4), () {
       _animationController.reset(); // Reset the animation
       Navigator.pushReplacement(
         context,
@@ -49,9 +47,7 @@ class _SplashPageState extends State<SplashPage>
           builder: (context, child) {
             return Transform.translate(
               offset: Offset(
-                (_animationController.value *
-                    MediaQuery.of(context).size.width) -
-                    MediaQuery.of(context).size.width / 2,
+                (_animationController.value * MediaQuery.of(context).size.width) - MediaQuery.of(context).size.width / 2,
                 0.0,
               ),
               child: child,
