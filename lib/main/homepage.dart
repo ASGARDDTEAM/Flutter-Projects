@@ -2,6 +2,9 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/ChatterCraft/ChatterCraft.dart';
+import 'package:flutter_project/Duyurular/duyuru_main.dart';
+import 'package:flutter_project/Gossip/gossip.dart';
 import '../KaynakMerkezi/kaynak.dart';
 import 'firstpage.dart';
 import 'secondpage.dart';
@@ -160,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Duyuru()));
                 },
               ),
               ListTile(
@@ -176,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatterApp()));
                 },
               ),
               ListTile(
@@ -192,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Gossip()));
                 },
               ),
               ListTile(
@@ -370,13 +373,13 @@ class _HomePageState extends State<HomePage> {
                       case 0:
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => FirstPage()),
+                          MaterialPageRoute(builder: (context) => Duyuru()),
                         );
                         break;
                       case 1:
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SecondPage()),
+                          MaterialPageRoute(builder: (context) => KaynakMerkezi()),
                         );
                         break;
                       default:

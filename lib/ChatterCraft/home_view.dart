@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/ChatterCraft/PageOne.dart';
 import 'package:flutter_project/ChatterCraft/PageTwo.dart';
-import 'dart:io';
-import 'dart:convert';
 import 'package:flutter_project/ChatterCraft/Tweet.dart';
 import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
-
 
 class HomeView extends StatefulWidget {
   @override
@@ -16,7 +13,7 @@ class _HomeViewState extends State<HomeView> {
   List<Tweet> tweets = [];
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _loadTweetsFromFile();
   }
@@ -30,12 +27,12 @@ class _HomeViewState extends State<HomeView> {
           child: Column(
             children: <Widget>[
               Container(
+                height: 50,
                 child: AppBar(
                   title: Text("C H A T T E R C R A F T"),
                   centerTitle: true,
                   backgroundColor: Color.fromRGBO(97, 169, 251, 1.0),
                 ),
-                height: 50,
               ),
               TabBar(
                 tabs: <Widget>[
@@ -56,6 +53,7 @@ class _HomeViewState extends State<HomeView> {
                           tweets.add(tweet);
                         });
                       },
+                      onLikePressed: (tweet) {},
                     ),
                     PageTwo(),
                   ],
@@ -67,7 +65,8 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
-    void _loadTweetsFromFile() async {
+
+  void _loadTweetsFromFile() async {
     tweets = await DosyaIslemleri.readTweetsFromFile("C:\\Users\\MSI\\Desktop\\Flutter-Projects-main\\Flutter-Projects\\lib\\ChatterCraft\\texts\\HomeTexts.txt");
     setState(() {});
   }

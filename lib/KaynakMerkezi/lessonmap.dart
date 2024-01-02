@@ -15,7 +15,7 @@ class LessonMap {
     "Ecem Hatice ÖZKAN": [
       "C iLE PROGRAMLAMA",
       "DOSYA ORGANİZASYONU",
-      "VERİ YAPILARI VE ALGORİTMALARI"
+      "VERİ YAPILARI VE ALGORİTMALARI" 
     ],
     "Ebrar TAŞDEMİR": [
       "BİLGİSAYAR MÜHENDİSLİĞİNE GİRİŞ",

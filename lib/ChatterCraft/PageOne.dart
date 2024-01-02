@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_project/ChatterCraft/Tweet.dart';
-import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
-import 'dart:io';
-
-
+import 'package:flutter_project/ChatterCraft/filetransaction.dart';
 
 class PageOne extends StatefulWidget {
   final List<Tweet> tweets;
   final Function(Tweet) onTweetSubmitted;
 
-  PageOne({required this.tweets, required this.onTweetSubmitted});
+  PageOne({required this.tweets, required this.onTweetSubmitted, required Null Function(dynamic tweet) onLikePressed});
 
   @override
   _PageOneState createState() => _PageOneState();
@@ -21,6 +17,24 @@ class _PageOneState extends State<PageOne> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+    String path = "C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\ChatterCraft\\texts\\HomeTexts.txt";
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(73, 255, 255, 255),
+      ),
+      body: FileTransaction(
+        path: path,
+        tweets: widget.tweets,
+        onLikePressed: (tweet) {
+          setState(() {
+            tweet.toggleLike();
+          });
+        },
+        onTweetSubmitted: (newTweet) {
+          widget.onTweetSubmitted(newTweet);
+        },
+=======
     return Column(
       children: [
         Expanded(
@@ -72,14 +86,11 @@ class _PageOneState extends State<PageOne> {
       ],
     );
   }
+
   void _saveTweetsToFile() {
     DosyaIslemleri.writeTweetsToFile("C:\\Users\\MSI\\Desktop\\Flutter-Projects-main\\Flutter-Projects\\lib\\ChatterCraft\\texts\\HomeTexts.txt", widget.tweets);
   }
 }
-
-
-
-
 
 class TweetCard extends StatelessWidget {
   final Tweet tweet;
@@ -89,34 +100,30 @@ class TweetCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(tweet.text),
-            SizedBox(height: 8.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        tweet.isLiked ? Icons.favorite : Icons.favorite_border,
-                        color: tweet.isLiked ? Colors.red : null,
-                      ),
-                      onPressed: onLikePressed,
-                    ),
-                    Text('${tweet.likes} Likes'),
-                  ],
+    return ListTile(
+      contentPadding: EdgeInsets.all(8.0),
+      leading: Icon(
+        Icons.account_box,
+        color: Colors.grey,
+      ),
+      title: Text(tweet.text),
+      subtitle: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(
+                  tweet.isLiked ? Icons.favorite : Icons.favorite_border,
+                  color: tweet.isLiked ? Colors.red : null,
                 ),
-              ],
-            ),
-          ],
-        ),
+                onPressed: onLikePressed,
+              ),
+              Text('${tweet.likes} Likes'),
+            ],
+          ),
+        ],
+>>>>>>> 87523c837419c0cba277f8b18ef7abd11e34e8fe
       ),
     );
   }

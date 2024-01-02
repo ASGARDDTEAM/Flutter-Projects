@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/ChatterCraft/TagPage.dart';
 
+import 'Tweet.dart';
 import 'chattercraftlist.dart';
+import 'pathllist.dart';
 
 class PageTwo extends StatefulWidget {
+  late final List<Tweet> tweets = [];
+  late final Function(Tweet) onTweetSubmitted;
   @override
   State<PageTwo> createState() => _StatePageTwo();
 }
@@ -20,10 +24,20 @@ class _StatePageTwo extends State<PageTwo> {
                   padding: EdgeInsets.all(15),
                   child: ListTile(
                       onTap: () {
+                        int newindex = index;
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => TagPage(),
+                            builder: (context) => TagPage(
+                              index: newindex,
+                              tweets: widget.tweets,
+                              onTweetSubmitted: (Tweet tweet) {
+                                setState(() {
+                                  widget.tweets.add(tweet);
+                                });
+                              },
+                              path: PathList().list2[index],
+                            ),
                           ),
                         );
                       },
