@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/ChatterCraft/Tweet.dart';
 import 'package:flutter_project/ChatterCraft/filetransaction.dart';
+import 'DosyaIslem.dart';
 
 class PageOne extends StatefulWidget {
   final List<Tweet> tweets;
@@ -14,10 +15,30 @@ class PageOne extends StatefulWidget {
 
 class _PageOneState extends State<PageOne> {
   final TextEditingController tweetController = TextEditingController();
+  String path = "C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\ChatterCraft\\texts\\HomeTexts.txt";
+
+  @override
+  void initState() {
+    super.initState();
+    _loadTweets();
+  }
+
+  Future<void> _loadTweets() async {
+    try {
+      List<Tweet> loadedTweets = await DosyaIslemleri.readTweetsFromFile(path);
+
+      setState(() {
+        widget.tweets.clear();
+        widget.tweets.addAll(loadedTweets);
+      });
+    } catch (e) {
+      // Hata durumunda yapılacak işlemleri buraya ekleyebilirsiniz
+      print("Tweetleri yüklerken bir hata oluştu: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    String path = "C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\ChatterCraft\\texts\\HomeTexts.txt";
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(73, 255, 255, 255),
@@ -29,9 +50,27 @@ class _PageOneState extends State<PageOne> {
           setState(() {
             tweet.toggleLike();
           });
+
+          Future<List<Tweet>> updatedTweets = DosyaIslemleri.readTweetsFromFile(path);
+
+          setState(() {
+            widget.tweets.clear();
+            widget.tweets.addAll(updatedTweets as Iterable<Tweet>);
+          });
+
+          DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
         },
-        onTweetSubmitted: (newTweet) {
+        onTweetSubmitted: (newTweet) async {
           widget.onTweetSubmitted(newTweet);
+
+          List<Tweet> updatedTweets = await DosyaIslemleri.readTweetsFromFile(path);
+
+          setState(() {
+            widget.tweets.clear();
+            widget.tweets.addAll(updatedTweets);
+          });
+
+          DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
         },
       ),
     );
