@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/GirisEkrani/model/User.dart';
-import 'package:flutter_project/GirisEkrani/model/User_List.dart';
-import 'package:flutter_project/GirisEkrani/model/my_button.dart';
-import 'package:flutter_project/GirisEkrani/model/my_textfield.dart';
 import 'package:flutter_project/main/main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'model/User.dart';
+import 'model/User_List.dart';
+import 'model/my_button.dart';
+import 'model/my_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);

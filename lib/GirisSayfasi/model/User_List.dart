@@ -1,11 +1,10 @@
-import 'package:flutter_project/GirisEkrani/model/User.dart';
+import 'User.dart';
 
-class kullanicilarListesi{
-  static List<Kullanici>kListesi=[
+class kullanicilarListesi {
+  static List<Kullanici> kListesi = [
     Kullanici(kullaniciAdi: "gizemduman@thor.com", Sifre: "123"),
     Kullanici(kullaniciAdi: "elifgul@thor.com", Sifre: "456"),
     Kullanici(kullaniciAdi: "tibashahini@thor.com", Sifre: "789"),
-  //örnek olarak yaptım.
-
+    //örnek olarak yaptım.
   ];
 }
