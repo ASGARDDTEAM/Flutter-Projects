@@ -1,9 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:ikinci_sayfa/models/liste.dart';
-import 'package:ikinci_sayfa/models/liste_model.dart';
-import 'package:ikinci_sayfa/second_page_home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'models/liste_model.dart';
+import 'second_page_home.dart';
+import 'models/liste.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,14 +15,17 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int activeIndex = 0;
-  List<News>liste=listem.newsList;
+  List<News> liste = listem.newsList;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: () {
-          Navigator.of(context).pop();
-        },),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         title: const Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +33,7 @@ class _HomeState extends State<Home> {
               Text("Flutter"),
               Text(
                 "News",
-                style:TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -42,7 +46,6 @@ class _HomeState extends State<Home> {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-            
           ),
           Column(
             children: [
@@ -53,7 +56,10 @@ class _HomeState extends State<Home> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SecondHomePage(shpage: liste[index],)),
+                        MaterialPageRoute(
+                            builder: (context) => SecondHomePage(
+                                  shpage: liste[index],
+                                )),
                       );
                     },
                     child: Container(
@@ -149,7 +155,6 @@ class _HomeState extends State<Home> {
             child: ListView.builder(
               itemCount: liste.length,
               itemBuilder: (context, index) {
-               
                 return Card(
                   child: ListTile(
                     title: Text(liste[index].title),
@@ -158,7 +163,10 @@ class _HomeState extends State<Home> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SecondHomePage(shpage: liste[index],)),
+                        MaterialPageRoute(
+                            builder: (context) => SecondHomePage(
+                                  shpage: liste[index],
+                                )),
                       );
                     },
                   ),

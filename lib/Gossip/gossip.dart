@@ -61,7 +61,7 @@ class _GossipState extends State<Gossip> {
         var newc = Containerin(title: title, text: text);
         containerwl.add(newc);
       }
-      Dosyawr.dosyayaYaz("C:Users/Senaa/Desktop/Flutter-project/GitProject/flutter_project/lib/Gossip/filekeeping/file.txt", containerwl); //yolu değistirin
+      Dosyawr.dosyayaYaz("C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\Gossip\\filekeeping\\file.txt", containerwl); //yolu değistirin
     });
   }
 
@@ -218,7 +218,7 @@ class _GossipState extends State<Gossip> {
   Widget build(BuildContext context) {
     //layout başlangıcı
     if (first) {
-      readfromfile("C:Users/Senaa/Desktop/Flutter-project/GitProject/flutter_project/lib/Gossip/filekeeping/file.txt"); //değiş
+      readfromfile("C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\Gossip\\filekeeping\\file.txt"); //değiş
       first = false;
     }
     return MaterialApp(

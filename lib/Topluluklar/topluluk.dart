@@ -1,3 +1,7 @@
-void main() {
-  print("Lets'do it, We make it");
+import 'package:flutter/material.dart';
+
+class Topluluklar extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return MaterialApp();
+  }
 }

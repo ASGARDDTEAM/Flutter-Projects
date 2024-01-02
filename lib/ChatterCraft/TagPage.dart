@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/ChatterCraft/PageOne.dart';
 import 'package:flutter_project/ChatterCraft/filetransaction.dart';
 import 'package:flutter_project/ChatterCraft/pathllist.dart';
 import 'DosyaIslem.dart';
@@ -37,7 +38,7 @@ class _TagPage extends State<TagPage> {
         onTweetSubmitted: (newTweet) {
           setState(() {
             widget.onTweetSubmitted(newTweet);
-            var sonuc = DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
+            DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
           });
         },
       ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 
 void main() {
-  runApp(const Sign());
+  runApp(Sign());
 }
 
 class Sign extends StatelessWidget {

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Twitter'),
+        title:  Text('NEWS'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new_outlined),
+          icon:  Icon(Icons.arrow_back),
           onPressed: () {
             // Navigator'ı kullanarak bir önceki sayfaya dön
             Navigator.pop(context);
           },
         ),
       ),
-      body: Center(child: Text('TWİTTER')),
+      body: Center(child: Text('NEWS')),
     );
   }
 }

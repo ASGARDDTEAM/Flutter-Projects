@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ikinci_sayfa/home.dart';
-import 'package:ikinci_sayfa/models/liste.dart';
-import 'package:ikinci_sayfa/models/liste_model.dart';
+
+import 'home.dart';
+import 'models/liste_model.dart';
+import 'models/liste.dart';
 
 class SecondHomePage extends StatefulWidget {
   final News shpage;
@@ -15,7 +16,7 @@ class SecondHomePage extends StatefulWidget {
 class _SecondHomePageState extends State<SecondHomePage> {
   late News currentNews; // Burada tılanılan haber tutulacak.News türünde bir nesne.
 //late dart dilinde başlangıç değeri belli bir süre sonra atanacak değişkenler için kullanılır.
-  List<News>listeNews=listem.newsList;
+  List<News> listeNews = listem.newsList;
   @override
   void initState() {
     super.initState();
@@ -39,7 +40,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
               icon: Icon(
                 Icons.arrow_back_ios,
                 color: Colors.blue,
-                ),
+              ),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
               },
@@ -49,13 +50,10 @@ class _SecondHomePageState extends State<SecondHomePage> {
               background: Image.asset(
                 currentNews.image,
                 fit: BoxFit.cover,
-                ),
-              
-
+              ),
               title: Align(
                 alignment: Alignment.bottomLeft, // Container'ı alt sol köşeye hizala
                 child: Container(
-                
                   child: Text(
                     currentNews.title,
                     style: TextStyle(
@@ -76,8 +74,8 @@ class _SecondHomePageState extends State<SecondHomePage> {
                     updateNews(listeNews[index]);
                   },
                   child: Container(
-                    // GestureDetector'ın içeriği, tıklanabilir alanı temsil eder.
-                  ),
+                      // GestureDetector'ın içeriği, tıklanabilir alanı temsil eder.
+                      ),
                 );
               },
               childCount: listeNews.length,
@@ -91,13 +89,10 @@ class _SecondHomePageState extends State<SecondHomePage> {
                 child: Container(
                   height: 600,
                   color: Colors.transparent,
-                  child:Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(currentNews.text)
-                   
-                
-                     
                     ],
                   ),
                 ),

@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ikinci_sayfa/home.dart';
+import 'home.dart';
 
-
-void main(){
-  runApp(MyApp());
+void main() {
+  runApp(Duyurular());
 }
 
-class MyApp extends StatelessWidget{
+class Duyurular extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
-    return const MaterialApp(
-      home: Home()
-    );
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: Home());
   }
-} 
+}
