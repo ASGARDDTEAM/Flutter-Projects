@@ -4,8 +4,6 @@ import 'package:flutter_project/ChatterCraft/PageTwo.dart';
 import 'package:flutter_project/ChatterCraft/Tweet.dart';
 import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
 
-import 'TagPage.dart';
-
 class HomeView extends StatefulWidget {
   @override
   _HomeViewState createState() => _HomeViewState();

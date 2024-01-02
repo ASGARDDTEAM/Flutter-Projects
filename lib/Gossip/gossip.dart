@@ -4,16 +4,17 @@ import 'package:flutter_project/Gossip/model/imageDescription.dart';
 import 'package:flutter_project/Gossip/model/imageList.dart';
 import 'package:flutter_project/Gossip/model/textMessage.dart';
 import 'package:transparent_image/transparent_image.dart';
+
 void main() {
-  runApp(MaterialApp(home: MyHomePage()));
+  runApp(MaterialApp(home: Gossip()));
 }
 
-class MyHomePage extends StatefulWidget {
+class Gossip extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<Gossip> createState() => _GossipState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _GossipState extends State<Gossip> {
   var textController = TextEditingController();
   var textController2 = TextEditingController();
   List<String> containerList = [];
@@ -182,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(15),
                               child: FadeInImage.memoryNetwork(
-                                placeholder:kTransparentImage,
+                                placeholder: kTransparentImage,
                                 image: imageList[index],
                                 fit: BoxFit.cover,
                               ),
