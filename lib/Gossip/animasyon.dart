@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Gossip/gossip.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -32,7 +33,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       _animationController.reset(); // Reset the animation
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => MyHomePage()),
+        MaterialPageRoute(builder: (context) => Gossip()),
       );
     });
   }
