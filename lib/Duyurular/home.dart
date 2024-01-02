@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/Duyurular/models/liste_model.dart';
-import 'package:flutter_project/Duyurular/models/liste.dart';
-import 'package:flutter_project/Duyurular/second_page_home.dart';
+import 'package:ikinci_sayfa/models/liste.dart';
+import 'package:ikinci_sayfa/models/liste_model.dart';
+import 'package:ikinci_sayfa/second_page_home.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -19,6 +19,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: () {
+          Navigator.of(context).pop();
+        },),
         title: const Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,14 +42,7 @@ class _HomeState extends State<Home> {
         children: [
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-            child: Text(
-              "Breaking News!",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 18.0,
-              ),
-            ),
+            
           ),
           Column(
             children: [
@@ -141,7 +137,7 @@ class _HomeState extends State<Home> {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
             child: Text(
-              "Trending News!",
+              "Trend Haberler",
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
