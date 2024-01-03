@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/ChatterCraft/ChatterCraft.dart';
 import 'package:flutter_project/Duyurular/duyuru_main.dart';
 import 'package:flutter_project/GirisSayfasi/main.dart';
-import 'package:flutter_project/Gossip/gossip.dart';
+import 'package:flutter_project/Gossip/animasyon.dart';
 import 'package:flutter_project/KaynakMerkezi/kaynak.dart';
 import 'package:flutter_project/Topluluklar/topluluk.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../GirisSayfasi/model/my_button.dart';
 import 'first_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -205,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Gossip()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SplashPage()));
                 },
               ),
               ListTile(
@@ -402,7 +401,7 @@ class _HomePageState extends State<HomePage> {
                       case 2:
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Gossip()),
+                          MaterialPageRoute(builder: (context) => SplashPage()),
                         );
                         break;
                       case 3:

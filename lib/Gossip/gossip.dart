@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Gossip/animasyon.dart';
 import 'package:flutter_project/Gossip/filewr.dart';
 import 'package:flutter_project/Gossip/incontainer.dart';
 import 'package:flutter_project/Gossip/listler.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() {
-  runApp(MaterialApp(home: Gossip()));
+  runApp(MaterialApp(home: SplashPage()));
 }
 
 class Gossip extends StatefulWidget {

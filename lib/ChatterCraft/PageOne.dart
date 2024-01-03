@@ -24,17 +24,12 @@ class _PageOneState extends State<PageOne> {
   }
 
   Future<void> _loadTweets() async {
-    try {
-      List<Tweet> loadedTweets = await DosyaIslemleri.readTweetsFromFile(path);
+    List<Tweet> loadedTweets = await DosyaIslemleri.readTweetsFromFile(path);
 
-      setState(() {
-        widget.tweets.clear();
-        widget.tweets.addAll(loadedTweets);
-      });
-    } catch (e) {
-      // Hata durumunda yapılacak işlemleri buraya ekleyebilirsiniz
-      print("Tweetleri yüklerken bir hata oluştu: $e");
-    }
+    setState(() {
+      widget.tweets.clear();
+      widget.tweets.addAll(loadedTweets);
+    });
   }
 
   @override
@@ -51,11 +46,11 @@ class _PageOneState extends State<PageOne> {
             tweet.toggleLike();
           });
 
-          Future<List<Tweet>> updatedTweets = DosyaIslemleri.readTweetsFromFile(path);
+          List<Tweet> updatedTweets = DosyaIslemleri.readTweetsFromFile(path) as List<Tweet>;
 
           setState(() {
             widget.tweets.clear();
-            widget.tweets.addAll(updatedTweets as Iterable<Tweet>);
+            widget.tweets.addAll(updatedTweets);
           });
 
           DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
@@ -70,7 +65,7 @@ class _PageOneState extends State<PageOne> {
             widget.tweets.addAll(updatedTweets);
           });
 
-          DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
+          await DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
         },
       ),
     );
