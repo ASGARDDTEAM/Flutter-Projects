@@ -4,7 +4,7 @@ import 'package:flutter_project/ChatterCraft/Tweet/Tweet.dart';
 class DosyaIslemleri {
   static Future<void> writeTweetsToFile(String filePath, List<Tweet> tweets) async {
     final file = File(filePath);
-    String content = tweets.map((tweet) => '${tweet.text}||${tweet.likes}||${tweet.isLiked}').join('\n');
+    String content = tweets.map((tweet) => '${tweet.text}||${tweet.likes}||${tweet.isLiked}${tweet.comments.join("||")}').join('\n');
     await file.writeAsString(content);
   }
 
@@ -21,6 +21,7 @@ class DosyaIslemleri {
         text: parts[0],
         likes: int.tryParse(parts[1]) ?? 0,
         isLiked: parts[2].toLowerCase() == 'true',
+        comments: parts.sublist(3),
       );
     }).toList();
   }

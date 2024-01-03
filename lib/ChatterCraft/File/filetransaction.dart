@@ -17,26 +17,31 @@ class FileTransaction extends StatefulWidget {
 
 class _FiletransactionState extends State<FileTransaction> {
   final TextEditingController tweetController = TextEditingController();
+  final TextEditingController commentTextController = TextEditingController();
+
+  void saveTweetsToFile(String path, List tweets) {
+    DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
+  }
 
   @override
   Widget build(BuildContext context) {
-    void saveTweetsToFile(String path, List tweets) {
-      DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
-    }
-
     return Column(
       children: [
         Expanded(
           child: ListView.builder(
             itemCount: widget.tweets.length,
             itemBuilder: (context, index) {
+              final tersindex = widget.tweets.length - index - 1;
               return TweetCard(
-                tweet: widget.tweets[index],
+                tweet: widget.tweets[tersindex],
                 onLikePressed: () {
                   setState(() {
-                    widget.tweets[index].toggleLike();
+                    widget.tweets[tersindex].toggleLike();
                     saveTweetsToFile(widget.path, widget.tweets);
                   });
+                },
+                onReplyPressed: () {
+                  showCommentDialog(context, widget.tweets[tersindex]);
                 },
               );
             },
@@ -74,5 +79,42 @@ class _FiletransactionState extends State<FileTransaction> {
         ),
       ],
     );
+  }
+
+  void showCommentDialog(BuildContext context, Tweet tweet) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Yorum Ekle"),
+        content: TextField(
+          controller: commentTextController,
+          decoration: InputDecoration(hintText: "Fikrini yazz.."),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              commentTextController.clear();
+            },
+            child: Text("İptal"),
+          ),
+          TextButton(
+            onPressed: () {
+              addComment(tweet, commentTextController.text);
+              Navigator.pop(context);
+              commentTextController.clear();
+            },
+            child: Text("Ekle"),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void addComment(Tweet tweet, String commentText) {
+    setState(() {
+      tweet.addComment(commentText);
+      saveTweetsToFile(widget.path, widget.tweets);
+    });
   }
 }

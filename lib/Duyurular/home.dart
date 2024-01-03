@@ -6,6 +6,7 @@ import 'package:flutter_project/main/homepage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter_project/Duyurular/models/liste.dart';
 import 'package:flutter_project/Duyurular/filefunctions.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -42,8 +43,7 @@ class _HomeState extends State<Home> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => HomePage()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
           },
         ),
         title: const Center(
@@ -187,8 +187,7 @@ class _HomeState extends State<Home> {
                         Text('${liste[index].year} - '),
                         Text(' ${liste[index].tapCount} '),
                         Padding(
-                          padding: const EdgeInsets.only(
-                              left: 4.0), // Adjust the padding as needed
+                          padding: const EdgeInsets.only(left: 4.0), // Adjust the padding as needed
                           child: Icon(
                             Icons.visibility,
                             size: 16,

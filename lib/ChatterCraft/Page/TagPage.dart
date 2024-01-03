@@ -11,7 +11,12 @@ class TagPage extends StatefulWidget {
   final int index;
   String path;
 
-  TagPage({required this.path, required this.index, required this.tweets, required this.onTweetSubmitted});
+  TagPage({
+    required this.path,
+    required this.index,
+    required this.tweets,
+    required this.onTweetSubmitted,
+  });
 
   @override
   State<TagPage> createState() => _TagPage();
@@ -25,11 +30,11 @@ class _TagPage extends State<TagPage> {
   }
 
   Future<void> _loadTweets() async {
-    List<Tweet> updatedTweets = await DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
+    List<Tweet> loadedTweets = await DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
 
     setState(() {
       widget.tweets.clear();
-      widget.tweets.addAll(updatedTweets);
+      widget.tweets.addAll(loadedTweets);
     });
   }
 
@@ -40,29 +45,31 @@ class _TagPage extends State<TagPage> {
         backgroundColor: Color.fromARGB(73, 255, 255, 255),
       ),
       body: FileTransaction(
-        path: PathList().list2[widget.index],
-        tweets: widget.tweets,
-        onLikePressed: (tweet) {
-          tweet.toggleLike();
+          path: PathList().list2[widget.index],
+          tweets: widget.tweets,
+          onLikePressed: (tweet) {
+            tweet.toggleLike();
 
-          Future<List<Tweet>> updatedTweets = DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
+            List<Tweet> updatedTweets = DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]) as List<Tweet>;
+            setState(() {
+              widget.tweets.clear();
+              widget.tweets.addAll(updatedTweets);
+            });
 
-          setState(() {
-            widget.tweets.clear();
-            widget.tweets.addAll(updatedTweets as Iterable<Tweet>);
-          });
-
-          DosyaIslemleri.writeTweetsToFile(PathList().list2[widget.index], widget.tweets);
-        },
-        onTweetSubmitted: (newTweet) async {
-          setState(() {
+            DosyaIslemleri.writeTweetsToFile(PathList().list2[widget.index], widget.tweets).then((_) {});
+          },
+          onTweetSubmitted: (newTweet) async {
             widget.onTweetSubmitted(newTweet);
-          });
 
-          List<Tweet> updatedTweets = await DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
-          DosyaIslemleri.writeTweetsToFile(PathList().list2[widget.index], updatedTweets);
-        },
-      ),
+            List<Tweet> updatedTweets = await DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
+
+            setState(() {
+              widget.tweets.clear();
+              widget.tweets.addAll(updatedTweets);
+            });
+
+            await DosyaIslemleri.writeTweetsToFile(PathList().list2[widget.index], widget.tweets).then((_) {});
+          }),
     );
   }
 }

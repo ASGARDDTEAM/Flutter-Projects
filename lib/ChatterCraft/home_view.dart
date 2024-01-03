@@ -79,13 +79,11 @@ class _HomeViewState extends State<HomeView> {
   }
 
   void _loadTweetsFromFile() async {
-    List<Tweet> tweets = await DosyaIslemleri.readTweetsFromFile("C:\\Users\\MSI\\Desktop\\Flutter-Projects-main\\Flutter-Projects\\lib\\ChatterCraft\\texts\\HomeTexts.txt");
+    List<Tweet> loadedTweets = await DosyaIslemleri.readTweetsFromFile("C:\\Users\\MSI\\Desktop\\Flutter-Projects-main\\Flutter-Projects\\lib\\ChatterCraft\\texts\\HomeTexts.txt");
 
-    setState(() async {
-      setState(() {
-        tweets.clear();
-        tweets.addAll(tweets);
-      });
+    setState(() {
+      tweets.clear();
+      tweets.addAll(loadedTweets);
     });
   }
 }
