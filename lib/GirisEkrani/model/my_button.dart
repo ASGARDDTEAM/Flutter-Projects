@@ -12,17 +12,22 @@ class MyButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(5),
         margin: const EdgeInsets.symmetric(horizontal: 25),
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(8),
-        ),
+
       child: Container(
         padding: const EdgeInsets.all(10),
         margin: const EdgeInsets.symmetric(horizontal:5),
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(8),
-        ),
+          decoration: BoxDecoration(
+          gradient: LinearGradient(
+          colors: [
+        Color.fromRGBO(197, 154, 250, 1),
+        Color.fromRGBO(147, 195,249, 1.0)
+        ],
+          stops: [0.0,1.0],
+         begin: Alignment.topCenter,
+         end: Alignment.bottomCenter,
+          ),
+          borderRadius: BorderRadius.circular(8.0),
+      ),
         child: Center(
           child: Text(
             'Giriş Yap',

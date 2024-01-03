@@ -1,19 +1,18 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_project/main/animation_page.dart';
 
-import 'homepage.dart';
-
-void main() {
+void main(){
   runApp(const MainPage());
 }
-
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: AnimationPage(),
     );
   }
 }
