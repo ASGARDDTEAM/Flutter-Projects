@@ -220,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Topluluklar()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ToplulukMerkezi()));
                 },
               ),
               ListTile(
@@ -407,7 +407,7 @@ class _HomePageState extends State<HomePage> {
                       case 3:
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Topluluklar()),
+                          MaterialPageRoute(builder: (context) => ToplulukMerkezi()),
                         );
                         break;
                       case 4:

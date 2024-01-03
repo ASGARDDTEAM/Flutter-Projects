@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_project/main/animation_page.dart';
+import 'package:flutter_project/main/Animation_continue.dart';
+
 
 void main(){
   runApp(const MainPage());

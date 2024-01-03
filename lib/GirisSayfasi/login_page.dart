@@ -85,16 +85,16 @@ bool signUserIn(BuildContext context) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height:15),
+              
 
               // Logo
               Image.asset(
-                "image/logo.png",
-               
+                "images/logo.png",
+
                 ),
               
 
-              const SizedBox(height:20),
+              const SizedBox(height:12),
 
               // Welcome back, you've been missed!
                ShaderMask(

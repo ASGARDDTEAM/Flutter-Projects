@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Flutter"),
+              const Text("Thor"),
               Text(
                 "News",
                 style: TextStyle(

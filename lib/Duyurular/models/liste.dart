@@ -33,7 +33,7 @@ class listem {
       tapCount: 0,
     ),
     News(
-      title: 'Mini Otonom Araç Yarışmasında Öğrencilerimizin Başarısı',
+      title: 'Öğrencilerimizin Başarısı',
       year: 2023,
       image: "images/basari.jpg",
       text:
@@ -73,7 +73,7 @@ class listem {
       tapCount: 0,
     ),
     News(
-      title: '2023-2024 Eğitim Öğretim Yılı Güz Dönemi Final Sınav Takvimi Açıklandı',
+      title: '2023-2024  Güz Dönemi Final Sınav Takvimi Açıklandı',
       year: 2024,
       image: "images/takvim.jpg",
       text:
