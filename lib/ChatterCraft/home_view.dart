@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/ChatterCraft/PageOne.dart';
-import 'package:flutter_project/ChatterCraft/PageTwo.dart';
-import 'package:flutter_project/ChatterCraft/Tweet.dart';
-import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
+import 'package:flutter_project/ChatterCraft/Page/PageOne.dart';
+import 'package:flutter_project/ChatterCraft/Page/PageTwo.dart';
+import 'package:flutter_project/ChatterCraft/Tweet/Tweet.dart';
+import 'package:flutter_project/ChatterCraft/File/DosyaIslem.dart';
 import 'package:flutter_project/main/homepage.dart';
 
 class HomeView extends StatefulWidget {

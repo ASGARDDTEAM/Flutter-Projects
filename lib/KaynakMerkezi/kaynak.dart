@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/KaynakMerkezi/teacher_circle.dart';
+import 'package:flutter_project/KaynakMerkezi/Page/teacher_circle.dart';
 
 import '../main/homepage.dart';
 

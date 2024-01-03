@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/ChatterCraft/Tweet.dart';
-import 'package:flutter_project/ChatterCraft/DosyaIslem.dart';
+import 'package:flutter_project/ChatterCraft/Tweet/Tweet.dart';
+import 'package:flutter_project/ChatterCraft/File/DosyaIslem.dart';
 
-import 'TweetCard.dart';
+import '../Tweet/TweetCard.dart';
 
 // ignore: must_be_immutable
 class FileTransaction extends StatefulWidget {

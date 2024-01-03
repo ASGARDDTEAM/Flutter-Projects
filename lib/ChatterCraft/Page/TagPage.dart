@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/ChatterCraft/filetransaction.dart';
-import 'package:flutter_project/ChatterCraft/pathllist.dart';
-import 'DosyaIslem.dart';
-import 'Tweet.dart';
+import 'package:flutter_project/ChatterCraft/File/filetransaction.dart';
+import 'package:flutter_project/ChatterCraft/Listpage/pathllist.dart';
+import '../File/DosyaIslem.dart';
+import '../Tweet/Tweet.dart';
 
 // ignore: must_be_immutable
 class TagPage extends StatefulWidget {
