@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_project/ChatterCraft/Tweet/Comment.dart';
 
 import 'Tweet.dart';
 
