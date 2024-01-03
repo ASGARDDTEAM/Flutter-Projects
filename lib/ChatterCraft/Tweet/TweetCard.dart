@@ -39,7 +39,7 @@ class TweetCard extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Icon(Icons.quickreply),
-                  color: Color.fromARGB(255, 43, 0, 255),
+                  color: Color.fromARGB(255, 109, 40, 169),
                   onPressed: onReplyPressed,
                 ),
               ],
