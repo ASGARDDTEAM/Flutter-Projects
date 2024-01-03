@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/KaynakMerkezi/kaynak.dart';
-import 'package:flutter_project/KaynakMerkezi/pdfmap.dart';
-import 'package:flutter_project/KaynakMerkezi/pdfpage.dart';
-import 'lessonmap.dart';
+import 'package:flutter_project/KaynakMerkezi/Listpage/pdfmap.dart';
+import 'package:flutter_project/KaynakMerkezi/Page/pdfpage.dart';
+import '../Listpage/lessonmap.dart';
 
 // ignore: must_be_immutable
 class ClickImage extends StatefulWidget {

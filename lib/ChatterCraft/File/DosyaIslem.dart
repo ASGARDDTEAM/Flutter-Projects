@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:flutter_project/ChatterCraft/Tweet.dart';
+import 'package:flutter_project/ChatterCraft/Tweet/Tweet.dart';
 
 class DosyaIslemleri {
   static Future<void> writeTweetsToFile(String filePath, List<Tweet> tweets) async {

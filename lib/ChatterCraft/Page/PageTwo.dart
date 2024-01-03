@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/ChatterCraft/TagPage.dart';
+import 'package:flutter_project/ChatterCraft/Page/TagPage.dart';
 
-import 'Tweet.dart';
-import 'chattercraftlist.dart';
-import 'pathllist.dart';
+import '../Tweet/Tweet.dart';
+import '../Listpage/chattercraftlist.dart';
+import '../Listpage/pathllist.dart';
 
 class PageTwo extends StatefulWidget {
   late final List<Tweet> tweets = [];

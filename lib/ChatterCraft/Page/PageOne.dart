@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/ChatterCraft/Tweet.dart';
-import 'package:flutter_project/ChatterCraft/filetransaction.dart';
-import 'DosyaIslem.dart';
+import 'package:flutter_project/ChatterCraft/Tweet/Tweet.dart';
+import 'package:flutter_project/ChatterCraft/File/filetransaction.dart';
+import '../File/DosyaIslem.dart';
 
 class PageOne extends StatefulWidget {
   final List<Tweet> tweets;
