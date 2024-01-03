@@ -5,7 +5,7 @@ import 'package:flutter_project/Duyurular/second_page_home.dart';
 import 'package:flutter_project/main/homepage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter_project/Duyurular/models/liste.dart';
-
+import 'package:flutter_project/Duyurular/filefunctions.dart';
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
