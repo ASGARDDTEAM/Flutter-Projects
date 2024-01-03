@@ -482,13 +482,15 @@ class _HomePageState extends State<HomePage> {
                 text: 'HOME',
               ),
               GButton(
-                  icon: Icons.newspaper,
-                  text: 'NEWS',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>  Duyurular()),
-                    );
+                  icon: Icons.fastfood_sharp,
+                  text: 'YEMEKHANE',
+                  onPressed: () async {
+                   String url = 'https://www.trakya.edu.tr/yemeklistesi';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
                   }),
               GButton(
                   icon: Icons.radio,

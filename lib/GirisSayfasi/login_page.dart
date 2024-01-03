@@ -43,7 +43,8 @@ bool signUserIn(BuildContext context) {
   
 
       // Başarılı bir giriş yaptıktan sonra 2 saniye bekleyip SecondPage'e geçiş yap
-      Future.delayed(Duration(seconds:0), () {
+      Future.delayed(Duration(seconds:1), () {
+        Navigator.pop(context);
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => HomePage()),
