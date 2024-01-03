@@ -30,26 +30,18 @@ bool signUserIn(BuildContext context) {
   for (Kullanici kullanici in kullanicilarListesi.kListesi) {
     if (kullanici.kullaniciAdi == ad && kullanici.Sifre == parola) {
       userFound=true;
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text('Başarılı'),
-            content: Text('Kullanıcı doğrulandı:Merhaba ${kullanici.kullaniciAdi.split("@")[0]}'),
-          );
-        },
-      );
+
 
   
 
       // Başarılı bir giriş yaptıktan sonra 2 saniye bekleyip SecondPage'e geçiş yap
-      Future.delayed(Duration(seconds:1), () {
-        Navigator.pop(context);
+    
+        
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => HomePage()),
         );
-      });
+    
 
       return true; // Exit the loop once a matching user is found
     }
