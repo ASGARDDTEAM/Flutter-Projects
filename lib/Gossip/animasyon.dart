@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Gossip/gossip.dart';
 
-class MyApp extends StatelessWidget {
+class animasyon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
