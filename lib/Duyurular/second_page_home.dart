@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/Duyurular/home.dart';
 import 'package:flutter_project/Duyurular/models/liste_model.dart';
 import 'package:flutter_project/Duyurular/models/liste.dart';
-
 class SecondHomePage extends StatefulWidget {
   final News shpage;
 
@@ -13,13 +12,15 @@ class SecondHomePage extends StatefulWidget {
 }
 
 class _SecondHomePageState extends State<SecondHomePage> {
-  late News currentNews; // Burada tılanılan haber tutulacak.News türünde bir nesne.
+  late News
+      currentNews; // Burada tılanılan haber tutulacak.News türünde bir nesne.
 //late dart dilinde başlangıç değeri belli bir süre sonra atanacak değişkenler için kullanılır.
-  List<News>listeNews=listem.newsList;
+  List<News> listeNews = listem.newsList;
   @override
   void initState() {
     super.initState();
-    currentNews = widget.shpage; // Başlangıçta widget'ın aldığı haberle başlatılır.
+    currentNews =
+        widget.shpage; // Başlangıçta widget'ın aldığı haberle başlatılır.
   }
 
   void updateNews(News news) {
@@ -39,9 +40,10 @@ class _SecondHomePageState extends State<SecondHomePage> {
               icon: Icon(
                 Icons.arrow_back_ios,
                 color: Colors.blue,
-                ),
+              ),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Home()));
               },
             ),
             expandedHeight: 200,
@@ -49,17 +51,15 @@ class _SecondHomePageState extends State<SecondHomePage> {
               background: Image.asset(
                 currentNews.image,
                 fit: BoxFit.cover,
-                ),
-              
-
+              ),
               title: Align(
-                alignment: Alignment.bottomLeft, // Container'ı alt sol köşeye hizala
+                alignment:
+                    Alignment.bottomLeft, // Container'ı alt sol köşeye hizala
                 child: Container(
-                  color: Colors.black.withOpacity(0.6),
                   child: Text(
                     currentNews.title,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 16.0,
                     ),
                   ),
@@ -76,8 +76,8 @@ class _SecondHomePageState extends State<SecondHomePage> {
                     updateNews(listeNews[index]);
                   },
                   child: Container(
-                    // GestureDetector'ın içeriği, tıklanabilir alanı temsil eder.
-                  ),
+                      // GestureDetector'ın içeriği, tıklanabilir alanı temsil eder.
+                      ),
                 );
               },
               childCount: listeNews.length,
@@ -90,15 +90,10 @@ class _SecondHomePageState extends State<SecondHomePage> {
                 borderRadius: BorderRadius.circular(0),
                 child: Container(
                   height: 600,
-                  color: Color.fromARGB(255, 143, 186, 251),
-                  child:Column(
+                  color: Colors.transparent,
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(currentNews.text)
-                   
-                
-                     
-                    ],
+                    children: [Text(currentNews.text)],
                   ),
                 ),
               ),

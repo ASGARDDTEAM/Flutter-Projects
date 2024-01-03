@@ -1,12 +1,16 @@
 // ignore_for_file: avoid_unnecessary_containers
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import '../KaynakMerkezi/kaynak.dart';
-import 'firstpage.dart';
-import 'secondpage.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter_project/ChatterCraft/ChatterCraft.dart';
+import 'package:flutter_project/Duyurular/duyuru_main.dart';
+import 'package:flutter_project/GirisSayfasi/main.dart';
+import 'package:flutter_project/Gossip/animasyon.dart';
+import 'package:flutter_project/KaynakMerkezi/kaynak.dart';
+import 'package:flutter_project/Topluluklar/topluluk.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'first_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,6 +27,14 @@ class _HomePageState extends State<HomePage> {
     'images/takvim.jpg',
     'images/download.jpg',
   ];
+  void _launchURL() async {
+    String url = 'https://www.trakya.edu.tr/yemeklistesi';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +57,8 @@ class _HomePageState extends State<HomePage> {
                 0.0,
                 1.0
               ],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
           ),
         ),
@@ -99,8 +111,8 @@ class _HomePageState extends State<HomePage> {
                 0.0,
                 1.0
               ],
-              begin: Alignment.bottomRight,
-              end: Alignment.bottomLeft,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
           ),
           // color: Color.fromARGB(255, 238, 224, 240),
@@ -160,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Duyurular()));
                 },
               ),
               ListTile(
@@ -176,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatterApp()));
                 },
               ),
               ListTile(
@@ -192,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SplashPage()));
                 },
               ),
               ListTile(
@@ -208,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Topluluklar()));
                 },
               ),
               ListTile(
@@ -272,7 +284,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Sign()));
                 },
               ),
             ],
@@ -286,12 +298,19 @@ class _HomePageState extends State<HomePage> {
               items: images.map((image) {
                 return Builder(
                   builder: (BuildContext context) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
+                    return GestureDetector(
+                      onTap: () {
+                        if (image == 'images/download.jpg') {
+                          _launchURL();
+                        }
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Image.asset(
+                          image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     );
                   },
@@ -370,16 +389,32 @@ class _HomePageState extends State<HomePage> {
                       case 0:
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => FirstPage()),
+                          MaterialPageRoute(builder: (context) => Duyurular()),
                         );
                         break;
                       case 1:
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SecondPage()),
+                          MaterialPageRoute(builder: (context) => ChatterApp()),
                         );
                         break;
-                      default:
+                      case 2:
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SplashPage()),
+                        );
+                        break;
+                      case 3:
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Topluluklar()),
+                        );
+                        break;
+                      case 4:
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => KaynakMerkezi()),
+                        );
                         break;
                     }
                   },
@@ -428,8 +463,8 @@ class _HomePageState extends State<HomePage> {
               0.0,
               1.0
             ],
-            begin: Alignment.bottomLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
           ),
         ),
         child: Padding(
@@ -456,13 +491,16 @@ class _HomePageState extends State<HomePage> {
                     );
                   }),
               GButton(
-                  icon: Icons.alternate_email,
-                  text: 'TWİTTER',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SecondPage()),
-                    );
+                  icon: Icons.radio,
+                  text: 'RADYO',
+                  onPressed: () async {
+                    String url = 'http://radyogunebakancanli.trakya.edu.tr/';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                    //Navigator.push(context,MaterialPageRoute(builder:(context)=>const SecondPage()),);
                   }),
             ],
           ),

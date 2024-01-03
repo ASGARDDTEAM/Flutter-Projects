@@ -2,17 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/Duyurular/home.dart';
 
 
-
-void main(){
-  runApp(MyApp());
+void main() {
+  runApp(Duyurular());
 }
 
-class MyApp extends StatelessWidget{
+class Duyurular extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home()
-    );
+  Widget build(BuildContext context) {
+    return const MaterialApp(home: Home());
   }
-} 
+}
