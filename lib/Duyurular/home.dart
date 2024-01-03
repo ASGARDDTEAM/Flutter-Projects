@@ -1,11 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/homepage.dart';
-import 'package:flutter_application_1/models/liste_model.dart';
-import 'package:flutter_application_1/second_page_home.dart';
+import 'package:flutter_project/Duyurular/models/liste_model.dart';
+import 'package:flutter_project/Duyurular/second_page_home.dart';
+import 'package:flutter_project/main/homepage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:flutter_application_1/filefunctions.dart';
-import 'package:flutter_application_1/models/liste.dart';
+import 'package:flutter_project/Duyurular/models/liste.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

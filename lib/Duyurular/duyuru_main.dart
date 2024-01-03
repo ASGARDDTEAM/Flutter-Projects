@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home.dart';
+import 'package:flutter_project/Duyurular/home.dart';
+
 
 void main() {
-  runApp(MyApp());
+  runApp(Duyurular());
 }
 
-class MyApp extends StatelessWidget {
+class Duyurular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(home: Home());

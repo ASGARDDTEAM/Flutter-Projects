@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home.dart';
-import 'package:flutter_application_1/models/liste_model.dart';
-import 'package:flutter_application_1/models/liste.dart';
-
+import 'package:flutter_project/Duyurular/home.dart';
+import 'package:flutter_project/Duyurular/models/liste_model.dart';
+import 'package:flutter_project/Duyurular/models/liste.dart';
 class SecondHomePage extends StatefulWidget {
   final News shpage;
 

@@ -1,5 +1,6 @@
 import 'dart:io';
-import 'package:flutter_application_1/models/liste_model.dart';
+import 'package:flutter_project/Duyurular/models/liste_model.dart';
+
 
 class filefunctions {
   static Future<void> writeTapCountsToFile(
