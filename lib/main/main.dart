@@ -1,18 +1,19 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_project/main/homepage.dart';
+import 'package:flutter_project/main/Animation_continue.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main(){
+  runApp(const MainPage());
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainPage extends StatelessWidget {
+  const MainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: AnimationPage(),
     );
   }
 }

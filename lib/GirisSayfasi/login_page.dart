@@ -85,16 +85,16 @@ bool signUserIn(BuildContext context) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height:15),
+              
 
               // Logo
               Image.asset(
-                "image/logo.png",
-               
+                "images/logo.png",
+
                 ),
               
 
-              const SizedBox(height:20),
+              const SizedBox(height:8),
 
               // Welcome back, you've been missed!
                ShaderMask(
@@ -121,11 +121,11 @@ bool signUserIn(BuildContext context) {
                 ),
               ),
 
-              SizedBox(height: 25),
+              SizedBox(height: 10),
 
               
     
-              const SizedBox(height: 25),
+          
 
               // Username textfield
               MyTextField(
@@ -148,29 +148,29 @@ bool signUserIn(BuildContext context) {
               // Forgot password?
               
 
-              const SizedBox(height: 25),
+              
 
               // Sign in button
               MyButton(
                 onTap:()=>signUserIn(context),
               ),
 
-              const SizedBox(height: 50),
+              // const SizedBox(height: 50),
 
-              // Or continue with
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        thickness: 0.5,
-                        color: Colors.grey[400],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // // Or continue with
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Row(
+              //     children: [
+              //       Expanded(
+              //         child: Divider(
+              //           thickness: 0.5,
+              //           color: Colors.grey[400],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

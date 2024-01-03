@@ -6,7 +6,10 @@ import 'package:flutter_project/main/homepage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:flutter_project/Duyurular/models/liste.dart';
 import 'package:flutter_project/Duyurular/filefunctions.dart';
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -50,7 +53,7 @@ class _HomeState extends State<Home> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Flutter"),
+              const Text("Thor"),
               Text(
                 "News",
                 style: TextStyle(

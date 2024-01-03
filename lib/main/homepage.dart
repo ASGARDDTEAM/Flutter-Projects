@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
-      backgroundColor: Color.fromRGBO(189, 194, 247, 1),
+      backgroundColor: Color.fromRGBO(246, 234, 250, 1),
       appBar: AppBar(
         // shape: ContinuousRectangleBorder(
         //   borderRadius: BorderRadius.vertical(
@@ -220,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Topluluklar()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => ToplulukMerkezi()));
                 },
               ),
               ListTile(
@@ -407,7 +407,7 @@ class _HomePageState extends State<HomePage> {
                       case 3:
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Topluluklar()),
+                          MaterialPageRoute(builder: (context) => ToplulukMerkezi()),
                         );
                         break;
                       case 4:
@@ -487,7 +487,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const FirstPage()),
+                      MaterialPageRoute(builder: (context) =>  Duyurular()),
                     );
                   }),
               GButton(

@@ -59,7 +59,8 @@ class _SecondHomePageState extends State<SecondHomePage> {
                   child: Text(
                     currentNews.title,
                     style: TextStyle(
-                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontSize: 16.0,
                     ),
                   ),
@@ -93,7 +94,8 @@ class _SecondHomePageState extends State<SecondHomePage> {
                   color: Colors.transparent,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [Text(currentNews.text)],
+                    children: [Text(currentNews.text
+                    ,style: TextStyle(fontSize: 18),)],
                   ),
                 ),
               ),
