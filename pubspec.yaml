@@ -44,6 +44,8 @@ dependencies:
   flutter_pdfview: ^1.2.7
   google_nav_bar: ^5.0.6
   image_picker: ^1.0.5
+  url_launcher: ^6.2.2
+
   
 
 dev_dependencies:

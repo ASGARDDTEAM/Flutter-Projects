@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/GirisEkrani/login_page.dart';
 
+import 'login_page.dart';
 
 void main() {
-  runApp(const Sign());
+  runApp(Sign());
 }
 
 class Sign extends StatelessWidget {

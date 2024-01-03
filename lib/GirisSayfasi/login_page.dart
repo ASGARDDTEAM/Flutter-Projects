@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/GirisEkrani/model/User.dart';
-import 'package:flutter_project/GirisEkrani/model/User_List.dart';
-import 'package:flutter_project/GirisEkrani/model/my_button.dart';
-import 'package:flutter_project/GirisEkrani/model/my_textfield.dart';
-import 'package:flutter_project/main/main.dart';
+import 'package:flutter_project/main/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'model/User.dart';
+import 'model/User_List.dart';
+import 'model/my_button.dart';
+import 'model/my_textfield.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
         Future.delayed(Duration(seconds: 1), () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MainPage()),
+            MaterialPageRoute(builder: (context) => HomePage()),
           );
         });
 
@@ -91,28 +91,31 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20),
 
               // Welcome back, you've been missed!
-              ShaderMask(
-                shaderCallback: (Rect bounds) {
-                  return LinearGradient(
-                    colors: [
-                      Color.fromRGBO(197, 154, 250, 1),
-                      Color.fromRGBO(147, 195, 249, 1.0)
-                    ],
-                    stops: [
-                      0.0,
-                      1.0
-                    ],
-                    begin: Alignment.bottomLeft,
-                    end: Alignment.bottomRight,
-                  ).createShader(bounds);
-                },
-                child: Text(
-                  'THOR',
-                  style: GoogleFonts.silkscreen(
-                    textStyle: TextStyle(
-                      color: Color.fromARGB(255, 238, 224, 240),
-                      fontWeight: FontWeight.normal,
-                      fontSize: 55.0,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ShaderMask(
+                  shaderCallback: (Rect bounds) {
+                    return LinearGradient(
+                      colors: [
+                        Color.fromRGBO(197, 154, 250, 1),
+                        Color.fromRGBO(147, 195, 249, 1.0)
+                      ],
+                      stops: [
+                        0.0,
+                        1.0
+                      ],
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.bottomRight,
+                    ).createShader(bounds);
+                  },
+                  child: Text(
+                    'THOR',
+                    style: GoogleFonts.silkscreen(
+                      textStyle: TextStyle(
+                        color: Color.fromARGB(255, 238, 224, 240),
+                        fontWeight: FontWeight.normal,
+                        fontSize: 55.0,
+                      ),
                     ),
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Gossip/animasyon.dart';
 import 'package:flutter_project/Gossip/filewr.dart';
 import 'package:flutter_project/Gossip/incontainer.dart';
 import 'package:flutter_project/Gossip/listler.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() {
-  runApp(MaterialApp(home: Gossip()));
+  runApp(MaterialApp(home: SplashPage()));
 }
 
 class Gossip extends StatefulWidget {
@@ -61,7 +62,7 @@ class _GossipState extends State<Gossip> {
         var newc = Containerin(title: title, text: text);
         containerwl.add(newc);
       }
-      Dosyawr.dosyayaYaz("C:/Users/EbrarTasdemir/Desktop/Github/Flutter-Projects/lib/Gossip/filekeeping/file.txt", containerwl); //yolu değistirin
+      Dosyawr.dosyayaYaz("C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\Gossip\\filekeeping\\file.txt", containerwl); //yolu değistirin
     });
   }
 
@@ -218,7 +219,7 @@ class _GossipState extends State<Gossip> {
   Widget build(BuildContext context) {
     //layout başlangıcı
     if (first) {
-      readfromfile("C:/Users/EbrarTasdemir/Desktop/Github/Flutter-Projects/lib/Gossip/filekeeping/file.txt"); //değiş
+      readfromfile("C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\Gossip\\filekeeping\\file.txt"); //değiş
       first = false;
     }
     return MaterialApp(
