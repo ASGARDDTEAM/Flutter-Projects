@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'topluluk_ikinci.dart';
 
+// ignore: must_be_immutable
 class Fonksiyon extends StatefulWidget {
   String imagePath;
   String toplulukName;
   String toplulukFullName;
   String keytopluluk;
 
-  
   Fonksiyon(this.imagePath, this.toplulukName, this.toplulukFullName, this.keytopluluk);
 
   @override
