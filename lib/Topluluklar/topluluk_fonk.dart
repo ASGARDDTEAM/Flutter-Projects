@@ -1,14 +1,16 @@
+
 import 'package:flutter/material.dart';
 import 'topluluk_ikinci.dart';
 
-// ignore: must_be_immutable
 class Fonksiyon extends StatefulWidget {
   String imagePath;
   String toplulukName;
   String toplulukFullName;
+  String aciklama;
   String keytopluluk;
 
-  Fonksiyon(this.imagePath, this.toplulukName, this.toplulukFullName, this.keytopluluk);
+  
+  Fonksiyon(this.imagePath, this.toplulukName, this.toplulukFullName,this.aciklama,this.keytopluluk);
 
   @override
   State<Fonksiyon> createState() => _FonksiyonState();
@@ -46,6 +48,7 @@ class _FonksiyonState extends State<Fonksiyon> {
           children: [
             CircleAvatar(
               radius: 100.0,
+              backgroundColor: Colors.white,
               backgroundImage: AssetImage(widget.imagePath),
             ),
             Text(widget.toplulukName, style: TextStyle(color: Colors.white)),

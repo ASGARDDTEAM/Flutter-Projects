@@ -22,10 +22,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<String> images = [
     'images/feng.jpg',
-    'images/logo.png',
+    'images/ıam.jpg',
     'images/helloworld.jpg',
-    'images/cttrl.jpg',
+    'images/codegirl.jpg',
     'images/yemekhane.png',
+    'images/touch.jpg',
   ];
   void _launchURL() async {
     String url = 'https://www.trakya.edu.tr/yemeklistesi';
