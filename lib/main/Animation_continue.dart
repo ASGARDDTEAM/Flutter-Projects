@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_project/GirisSayfasi/main.dart';
 import 'package:flutter_project/main/homepage.dart';
 import 'package:lottie/lottie.dart';
 
@@ -28,7 +29,7 @@ class _AnimationPageState extends State<AnimationPage>
     Future.delayed(Duration(seconds: 1), () async {
       await _controller.forward();
 
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>HomePage(),),);
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Sign(),),);
     });
   }
 
