@@ -21,11 +21,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<String> images = [
-    'images/dune.jpg',
-    'images/joker.jpg',
-    'images/thor.jpg',
-    'images/takvim.jpg',
-    'images/download.jpg',
+    'images/feng.jpg',
+    'images/logo.png',
+    'images/helloworld.jpg',
+    'images/cttrl.jpg',
+    'images/yemekhane.png',
   ];
   void _launchURL() async {
     String url = 'https://www.trakya.edu.tr/yemeklistesi';
@@ -300,7 +300,7 @@ class _HomePageState extends State<HomePage> {
                   builder: (BuildContext context) {
                     return GestureDetector(
                       onTap: () {
-                        if (image == 'images/download.jpg') {
+                        if (image == 'images/yemekhane.png') {
                           _launchURL();
                         }
                       },
@@ -419,8 +419,8 @@ class _HomePageState extends State<HomePage> {
                     }
                   },
                   child: Card(
-                    color: Colors.transparent,
-                    elevation: 5,
+                    color: Color.fromARGB(129, 236, 193, 239),
+                    elevation: 6,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),

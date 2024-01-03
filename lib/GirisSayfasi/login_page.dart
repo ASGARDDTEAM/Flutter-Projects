@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_project/GirisSayfasi/model/User.dart';
 import 'package:flutter_project/GirisSayfasi/model/my_button.dart';
@@ -38,8 +40,10 @@ bool signUserIn(BuildContext context) {
         },
       );
 
+  
+
       // Başarılı bir giriş yaptıktan sonra 2 saniye bekleyip SecondPage'e geçiş yap
-      Future.delayed(Duration(seconds:1), () {
+      Future.delayed(Duration(seconds:0), () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => HomePage()),
