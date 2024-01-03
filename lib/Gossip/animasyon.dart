@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Gossip/gossip.dart';
 
+class animasyon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SplashPage(),
+    );
+  }
+}
+
 class SplashPage extends StatefulWidget {
   @override
   _SplashPageState createState() => _SplashPageState();

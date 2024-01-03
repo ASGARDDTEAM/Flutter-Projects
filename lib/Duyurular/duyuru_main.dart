@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'package:flutter_project/Duyurular/home.dart';
+
 
 void main() {
   runApp(Duyurular());

@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Duyurular/models/liste_model.dart';
+import 'package:flutter_project/Duyurular/second_page_home.dart';
+import 'package:flutter_project/main/homepage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import 'models/liste_model.dart';
-import 'second_page_home.dart';
-import 'models/liste.dart';
+import 'package:flutter_project/Duyurular/models/liste.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,24 +16,47 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int activeIndex = 0;
   List<News> liste = listem.newsList;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCount();
+  }
+
+  Future<void> _loadCount() async {
+    List<int> tapCounts = await filefunctions.readTapCountsFromFile(
+      r"C:\Users\PC\Desktop\workonnnsonn\flutter_application_1\lib\file\tapCountfile.txt",
+    );
+
+    setState(() {
+      for (int i = 0; i < tapCounts.length; i++) {
+        liste[i].tapCount = tapCounts[i];
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => HomePage()));
           },
         ),
         title: const Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Flutter"),
+              const Text("Flutter"),
               Text(
                 "News",
-                style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -57,9 +80,10 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondHomePage(
-                                  shpage: liste[index],
-                                )),
+                          builder: (context) => SecondHomePage(
+                            shpage: liste[index],
+                          ),
+                        ),
                       );
                     },
                     child: Container(
@@ -158,15 +182,36 @@ class _HomeState extends State<Home> {
                 return Card(
                   child: ListTile(
                     title: Text(liste[index].title),
-                    subtitle: Text(liste[index].year.toString()),
+                    subtitle: Row(
+                      children: [
+                        Text('${liste[index].year} - '),
+                        Text(' ${liste[index].tapCount} '),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 4.0), // Adjust the padding as needed
+                          child: Icon(
+                            Icons.visibility,
+                            size: 16,
+                          ),
+                        ),
+                      ],
+                    ),
                     leading: Image.asset(liste[index].image),
                     onTap: () {
+                      setState(() {
+                        liste[index].tapCount++;
+                      });
+                      filefunctions.writeTapCountsToFile(
+                        r"C:\Users\PC\Desktop\workonnnsonn\flutter_application_1\lib\file\tapCountfile.txt",
+                        listem.newsList,
+                      );
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SecondHomePage(
-                                  shpage: liste[index],
-                                )),
+                          builder: (context) => SecondHomePage(
+                            shpage: liste[index],
+                          ),
+                        ),
                       );
                     },
                   ),
