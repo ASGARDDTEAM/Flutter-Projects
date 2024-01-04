@@ -86,8 +86,11 @@ class _SecondHomePageState extends State<SecondHomePage> {
                   color: Colors.transparent,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [Text(currentNews.text
-                    ,style: TextStyle(fontSize: 18),)],
+                    children: [
+                    Text(
+                    currentNews.text,
+                    style: TextStyle(fontSize: 18),
+                    )],
                   ),
                 ),
               ),
