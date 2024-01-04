@@ -3,8 +3,6 @@ import 'package:flutter_project/Topluluklar/topluluk_fonk.dart';
 import 'topluluk_liste.dart';
 
 class ListeyeAtma{
-  //List<Fonksiyon> 
-  
   static List<Fonksiyon> toplulukElevateButton (){
     List<Fonksiyon> liste=[];
     for(var eleman in ToplulukMap.dict.entries){
@@ -16,13 +14,5 @@ class ListeyeAtma{
           eleman.key,
           )); }
     return liste;
-
-    
   }
-  
 }
-/*ToplulukElevateButton(
-              
-            ToplulukMap.dict[ToplulukMap.toplulukIsimListeleri[index]]["image"],
-            ToplulukMap.dict[ToplulukMap.toplulukIsimListeleri[index]]["kisim"],
-            ToplulukMap.dict[ToplulukMap.toplulukIsimListeleri[index]]["uisim"]),*/

@@ -62,6 +62,5 @@ class ToplulukMap {
       "uisim":"Yüksek Büyücüler Topluluğu",
       "aciklama":"Kuruluş yılı:2017\n\nKuran kişi:Mehmet Potter \n\nTopluluk hakkında kısa bilgi:Merhaba Büyücü Ailesi! Hogwarts'un büyülü dünyasına hoş geldiniz. Büyücüler Topluluğu, sihirli maceraların ve büyü dolu dostlukların bulunduğu bir ortamı paylaşan tutkulu büyücülerin bir araya geldiği bir platformdur. Burada, Zümrüdüanka Tılsımı'ndan, Patronus çağırma sanatına kadar birçok sihirli konuda bilgi ve deneyim paylaşıyoruz. Düzenlediğimiz etkinliklerle birbirimize ilham veriyor, büyülü dünyamızı birlikte keşfediyor ve Hogwarts'un eşsiz atmosferini yaşamanın keyfini çıkarıyoruz. Sihirli bir topluluğa katılın ve birlikte büyülü anılar yaratmanın keyfini yaşayın!\n\n Örnek Etkinlikler: Quidditch Maçları, Harry Potter Film Geceleri, Gökyüzü Incelemeleri, İksir (Bitki Çayları) Workshopu"
     },
-
   };
 }

@@ -1,11 +1,7 @@
-// // topluluk_ikinci.dart
+
 import 'package:flutter/material.dart';
-
 import 'package:flutter_project/Topluluklar/topluluk_liste.dart';
-
-
 class Topluluk2 extends StatefulWidget {
-    
 
   String keytopluluk;
   Topluluk2(this.keytopluluk);
@@ -45,12 +41,6 @@ class _Topluluk2State extends State<Topluluk2> {
               ),
             ),
             SliverToBoxAdapter(
-              // child: Padding(
-              //   padding: EdgeInsets.all(8.0),
-              //   child: Container(
-              //     child: ListView.builder(
-              //       itemCount: ToplulukMap.dict.length,
-              //       itemBuilder: (context, index) => 
               child:Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -100,12 +90,7 @@ class _Topluluk2State extends State<Topluluk2> {
                             ),
                             height: 75,
                             width: 1000,
-                           
-                              
-                                 color: Color.fromRGBO(147, 195, 249, 0.9),
-                                
-                                
-                          
+                            color: Color.fromRGBO(147, 195, 249, 0.9),
                           ),
                           SizedBox(height: 8,),
                           ClipRRect(
@@ -130,18 +115,16 @@ class _Topluluk2State extends State<Topluluk2> {
                                   ],
                                   begin: Alignment.center,
                                   end: Alignment.bottomCenter,
-                                ),
                               ),
-                            ),
                           ),
-                        ],
-                               
-              
+                          ),
                       ),
-              ),
+                      ],
+                    ),
                   ),
-                ]),
-              ),
-            );
+               ),
+            ]),
+          ),
+          );
   }
 }

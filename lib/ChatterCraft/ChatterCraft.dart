@@ -6,6 +6,8 @@ void main() => runApp(ChatterApp());
 class ChatterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: "Metarial app", home: HomeView());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Metarial app", home: HomeView());
   }
 }

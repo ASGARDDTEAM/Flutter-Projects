@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_project/Topluluklar/toluluk_fonk2.dart';
 import 'package:flutter_project/main/homepage.dart';
 
@@ -53,10 +52,8 @@ class _ToplulukMerkeziState extends State<ToplulukMerkezi> {
                 style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
                 textAlign: TextAlign.center,
               ),
-              
             ),
           ),
-          
         ),
         body: ListWheelScrollView(
           perspective: 0.001,
@@ -64,9 +61,7 @@ class _ToplulukMerkeziState extends State<ToplulukMerkezi> {
           physics: FixedExtentScrollPhysics(),
           onSelectedItemChanged: (index)=> Text('aa',
           style: TextStyle(color: Colors.white),),
-           
-            children: ListeyeAtma.toplulukElevateButton()
-            ,
+          children: ListeyeAtma.toplulukElevateButton(),
           ),
           ) ,
 

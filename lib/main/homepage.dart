@@ -42,11 +42,7 @@ class _HomePageState extends State<HomePage> {
     var scaffold = Scaffold(
       backgroundColor: Color.fromRGBO(246, 234, 250, 1),
       appBar: AppBar(
-        // shape: ContinuousRectangleBorder(
-        //   borderRadius: BorderRadius.vertical(
-        //     bottom: Radius.circular(100),
-        //   ),
-        // ),
+
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -63,7 +59,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        // backgroundColor: const Color.fromARGB(255, 80, 18, 91),
         title: ShaderMask(
           shaderCallback: (Rect bounds) {
             return LinearGradient(
@@ -92,14 +87,6 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
       ),
-
-      // leading: IconButton(
-      //   onPressed: () {},
-      //   icon: const Icon(Icons.menu),
-      //   color:const Color.fromARGB(255, 208, 165, 215),
-      // ),
-      // elevation: 0,
-
       drawer: Drawer(
         child: Container(
           decoration: BoxDecoration(
@@ -116,7 +103,6 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.bottomCenter,
             ),
           ),
-          // color: Color.fromARGB(255, 238, 224, 240),
           child: ListView(
             children: [
               const DrawerHeader(
@@ -380,7 +366,6 @@ class _HomePageState extends State<HomePage> {
 
                 return GestureDetector(
                   onTap: () {
-                    // Burada tıklanan kare kutuya yapılmak istenen işlemleri ekleyebilirsiniz.
                     switch (index) {
                       //alttaki yukarlakların gideceği yeri belirler
                       case 0:
@@ -467,7 +452,6 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
           child: GNav(
-            // backgroundColor: Color.fromARGB(255, 80, 18, 91),
             color: Color.fromARGB(255, 255, 255, 255),
             activeColor: Color.fromARGB(255, 246, 186, 255),
             tabBackgroundColor: Color.fromARGB(255, 54, 54, 54),
@@ -499,7 +483,6 @@ class _HomePageState extends State<HomePage> {
                     } else {
                       throw 'Could not launch $url';
                     }
-                    //Navigator.push(context,MaterialPageRoute(builder:(context)=>const SecondPage()),);
                   }),
             ],
           ),
