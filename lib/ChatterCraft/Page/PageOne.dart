@@ -35,6 +35,7 @@ class _PageOneState extends State<PageOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(147, 195, 249, 1),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(73, 255, 255, 255),
       ),

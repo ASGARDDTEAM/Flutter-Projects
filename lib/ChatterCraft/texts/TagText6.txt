@@ -1,0 +1,3 @@
+2. Dönem yemekhane yeri değişiyormuş çok şükür.||0||false
+Arkadaşlar yemekte güzel bir tatlı varsa o gün yemek sırası hep olur :))||0||false
+Bugün yemekhanede brokoli vardı ve yemek sırasıı yoktuuu şaşırmadımm hahaha||1||true

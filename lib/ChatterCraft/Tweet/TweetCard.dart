@@ -19,8 +19,23 @@ class TweetCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(tweet.text),
-            SizedBox(height: 8.0),
+            Row(
+              children: [
+                Icon(
+                  Icons.account_circle,
+                  color: Colors.grey,
+                  size: 40.0,
+                ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    tweet.text,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -36,10 +51,18 @@ class TweetCard extends StatelessWidget {
                     Text('${tweet.likes} Likes'),
                   ],
                 ),
-                IconButton(
-                  icon: Icon(Icons.quickreply),
-                  color: Color.fromARGB(255, 109, 40, 169),
-                  onPressed: onReplyPressed,
+                Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(225, 229, 150, 1),
+                      Color.fromRGBO(97, 169, 251, 1),
+                    ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.quickreply),
+                    color: Color.fromRGBO(42, 40, 162, 1),
+                    onPressed: onReplyPressed,
+                  ),
                 ),
               ],
             ),
@@ -52,14 +75,14 @@ class TweetCard extends StatelessWidget {
                     backgroundColor: const Color.fromRGBO(221, 223, 253, 1.0),
                     title: Text(
                       'Yorumlar',
-                      style: TextStyle(color: Color.fromARGB(255, 130, 57, 208), fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(color: Color.fromRGBO(42, 40, 162, 1), fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     children: [
                       for (var comment in tweet.comments)
                         ListTile(
                           leading: Icon(
                             Icons.account_circle,
-                            color: Color.fromARGB(255, 130, 57, 208),
+                            color: Color.fromRGBO(99, 96, 229, 1),
                           ),
                           title: Text(
                             comment,

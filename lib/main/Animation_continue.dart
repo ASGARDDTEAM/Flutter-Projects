@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_project/GirisSayfasi/main.dart';
+import 'package:flutter_project/GirisSayfasi/login_page.dart';
 import 'package:lottie/lottie.dart';
 
 class AnimationPage extends StatefulWidget {
@@ -25,7 +24,7 @@ class _AnimationPageState extends State<AnimationPage> with SingleTickerProvider
       await _controller.forward();
 
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => Sign()),
+        MaterialPageRoute(builder: (context) => LoginPage()),
       );
     });
   }
@@ -57,12 +56,15 @@ class _AnimationPageState extends State<AnimationPage> with SingleTickerProvider
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-        Color.fromRGBO(197, 154, 250, 1),
-        Color.fromRGBO(147, 195,249, 1.0)
+                  Color.fromRGBO(197, 154, 250, 1),
+                  Color.fromRGBO(147, 195, 249, 1.0)
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: [0.0, 1.0],
+                stops: [
+                  0.0,
+                  1.0
+                ],
               ),
             ),
             child: LottieBuilder.asset(
@@ -77,5 +79,3 @@ class _AnimationPageState extends State<AnimationPage> with SingleTickerProvider
     );
   }
 }
-
-

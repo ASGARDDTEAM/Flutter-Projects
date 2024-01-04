@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'topluluk_ikinci.dart';
 
+// ignore: must_be_immutable
 class Fonksiyon extends StatefulWidget {
   String imagePath;
   String toplulukName;
@@ -9,8 +9,7 @@ class Fonksiyon extends StatefulWidget {
   String aciklama;
   String keytopluluk;
 
-  
-  Fonksiyon(this.imagePath, this.toplulukName, this.toplulukFullName,this.aciklama,this.keytopluluk);
+  Fonksiyon(this.imagePath, this.toplulukName, this.toplulukFullName, this.aciklama, this.keytopluluk);
 
   @override
   State<Fonksiyon> createState() => _FonksiyonState();

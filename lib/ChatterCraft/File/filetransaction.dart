@@ -20,9 +20,12 @@ class _FiletransactionState extends State<FileTransaction> {
   final TextEditingController commentTextController = TextEditingController();
   String fixedPath = "C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\ChatterCraft\\texts\\HomeTexts.txt";
 
-  void saveTweetsToFile(String fixedPath, String path, List tweets) {
+  void saveTweetsToFile(String path, List tweets) {
     DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
-    DosyaIslemleri.writeTweetsToFile(fixedPath, widget.tweets);
+  }
+
+  void addTweet(String fixedPath, List tweets) {
+    DosyaIslemleri.addTweetToFile(fixedPath, tweets.last);
   }
 
   @override
@@ -39,7 +42,8 @@ class _FiletransactionState extends State<FileTransaction> {
                 onLikePressed: () {
                   setState(() {
                     widget.tweets[tersindex].toggleLike();
-                    saveTweetsToFile(fixedPath, widget.path, widget.tweets);
+                    saveTweetsToFile(widget.path, widget.tweets);
+                    addTweet(fixedPath, widget.tweets);
                   });
                 },
                 onReplyPressed: () {
@@ -57,13 +61,14 @@ class _FiletransactionState extends State<FileTransaction> {
                 child: TextFormField(
                   controller: tweetController,
                   decoration: InputDecoration(
-                    hintText: 'What\'s happening?',
+                    hintText: 'Yine Ne Soruyosun..?',
                   ),
                   onFieldSubmitted: (tweetText) {
                     final newTweet = Tweet(text: tweetText);
                     widget.onTweetSubmitted(newTweet);
                     tweetController.clear();
-                    saveTweetsToFile(fixedPath, widget.path, widget.tweets);
+                    saveTweetsToFile(widget.path, widget.tweets);
+                    addTweet(fixedPath, widget.tweets);
                   },
                 ),
               ),
@@ -73,7 +78,8 @@ class _FiletransactionState extends State<FileTransaction> {
                   final newTweet = Tweet(text: tweetController.text);
                   widget.onTweetSubmitted(newTweet);
                   tweetController.clear();
-                  saveTweetsToFile(fixedPath, widget.path, widget.tweets);
+                  saveTweetsToFile(widget.path, widget.tweets);
+                  addTweet(fixedPath, widget.tweets);
                 },
               ),
             ],
@@ -116,7 +122,8 @@ class _FiletransactionState extends State<FileTransaction> {
   void addComment(Tweet tweet, String commentText) {
     setState(() {
       tweet.addComment(commentText);
-      saveTweetsToFile(fixedPath, widget.path, widget.tweets);
+      saveTweetsToFile(widget.path, widget.tweets);
+      addTweet(fixedPath, widget.tweets);
     });
   }
 }

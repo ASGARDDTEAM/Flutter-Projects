@@ -1,14 +1,15 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/Gossip/animasyon.dart';
-import 'package:flutter_project/Gossip/filewr.dart';
-import 'package:flutter_project/Gossip/incontainer.dart';
-import 'package:flutter_project/Gossip/listler.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:image_picker/image_picker.dart';
 
+import 'animasyon.dart';
+import 'filewr.dart';
+import 'incontainer.dart';
+import 'listler.dart';
+
 void main() {
-  runApp(MaterialApp(home: SplashPage()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: SplashPage()));
 }
 
 class Gossip extends StatefulWidget {
@@ -17,7 +18,6 @@ class Gossip extends StatefulWidget {
 }
 
 class _GossipState extends State<Gossip> {
-  int cntrtolistindex = 0;
   int i = 0;
   bool first = true;
 
@@ -32,13 +32,14 @@ class _GossipState extends State<Gossip> {
         containerwl = value;
 
         i = containerwl.length;
-        if (i != 0)
+        if (i != 0) {
+          i = 0;
           for (Containerin item in containerwl) {
             item.text = item.text.replaceAll("é", ",");
-            containerList.add(containermaking(cntrtolistindex));
-            cntrtolistindex++;
+            containerList.add(containermaking(i));
             i = containerList.length;
           }
+        }
       });
     });
   }
@@ -62,7 +63,7 @@ class _GossipState extends State<Gossip> {
         var newc = Containerin(title: title, text: text);
         containerwl.add(newc);
       }
-      Dosyawr.dosyayaYaz("C:\\Users\\ireme\\Documents\\GitHub\\Flutter-Projects\\lib\\Gossip\\filekeeping\\file.txt", containerwl); //yolu değistirin
+      Dosyawr.dosyayaYaz(r'C:\Users\Senaa\Desktop\Flutter-project\GitProject\flutter_project\lib\Gossip\filekeeping\file.txt', containerwl); //yolu değistirin
     });
   }
 
@@ -165,9 +166,7 @@ class _GossipState extends State<Gossip> {
           onPressed: () {
             pickedimage = resimadres;
           },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black.withOpacity(0.2),
-          ),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.black.withOpacity(0.2), shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(4))),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(4),
             child: Container(
@@ -219,7 +218,7 @@ class _GossipState extends State<Gossip> {
   Widget build(BuildContext context) {
     //layout başlangıcı
     if (first) {
-      readfromfile("C:\\Users\\ireme\\Documents\\GitHub\\Flutter-Projects\\lib\\Gossip\\filekeeping\\file.txt"); //değiş
+      readfromfile(r'C:\Users\Senaa\Desktop\Flutter-project\GitProject\flutter_project\lib\Gossip\filekeeping\file.txt'); //değiş
       first = false;
     }
     return MaterialApp(
@@ -266,7 +265,7 @@ class _GossipState extends State<Gossip> {
                         shrinkWrap: true,
                         itemBuilder: ((context, i) => Padding(
                               padding: const EdgeInsets.all(4.0),
-                              child: containerList[i],
+                              child: List.from(containerList.reversed)[i],
                             )),
                       ),
                     ),
@@ -433,7 +432,6 @@ class _GossipState extends State<Gossip> {
                                                             pickedimage = '';
                                                             _selectedImage = null;
 
-                                                            Navigator.of(context).pop();
                                                             Navigator.of(context).pop();
                                                           },
                                                           child: Text("Evet"),

@@ -25,4 +25,25 @@ class DosyaIslemleri {
       );
     }).toList();
   }
+
+  static Future<void> addTweetToFile(String filePath, Tweet tweet) async {
+    final file = File(filePath);
+
+    List<String> existingLines = [];
+    if (await file.exists()) {
+      String existingContent = await file.readAsString();
+      existingLines = existingContent.split('\n').where((line) => line.isNotEmpty).toList();
+    }
+
+    String newContent = '${tweet.text}||${tweet.likes}||${tweet.isLiked}';
+    if (tweet.comments.isNotEmpty) {
+      newContent += '||${tweet.comments.join("||")}';
+    }
+
+    newContent += '\n';
+
+    existingLines.add(newContent);
+
+    await file.writeAsString(existingLines.join('\n'));
+  }
 }

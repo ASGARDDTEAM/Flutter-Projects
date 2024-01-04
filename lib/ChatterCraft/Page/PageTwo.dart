@@ -49,7 +49,7 @@ class _StatePageTwo extends State<PageTwo> {
                             child: Icon(
                               Icons.bolt,
                               size: 30,
-                              color: Color.fromARGB(255, 23, 102, 214),
+                              color: Color.fromRGBO(42, 40, 162, 1),
                             ),
                           ),
                           Text(ChatterListe().list[index]),

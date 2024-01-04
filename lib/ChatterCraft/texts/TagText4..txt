@@ -1,0 +1,1 @@
+Emir hocanın numarasını atabilir misiniz?||0||false

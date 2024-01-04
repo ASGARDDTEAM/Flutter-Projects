@@ -31,7 +31,7 @@ class TeacherMap {
       "git": "https://github.com/zehragizem"
     },
     "7": {
-      "name": "TİBA SHAHANİ",
+      "name": "TIBA SHAHINI",
       "email": "tibashahani@trakya.edu.tr",
       "git": "https://github.com/tibashh"
     }
