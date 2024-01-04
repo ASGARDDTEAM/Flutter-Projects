@@ -10,24 +10,10 @@ class listem {
       tapCount: 0,
     ),
     News(
-      title: 'KYK Bursları ve Krediler Açıklandı',
-      year: 2023,
-      image: "images/burs.jpg",
-      text:"Kredi ve Yurtlar Kurumu (KYK) olarak, yeni akademik dönemde öğrencilere yönelik sağladığımız burslarımızın sonuçları açıklandı. Heyecanla duyuruyoruz ki, KYK Bursları için başvurular değerlendirilmiş ve destek almaya hak kazanan öğrencilerimiz belirlendi.",
-      tapCount: 0,
-    ),
-    News(
       title: "Öğrencilerimizin Geliştirdiği Mobil Uygulama Google Play'de",
       year: 2022,
       image: "images/uygulama2.jpg",
       text:"Trakya Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencileri sizin için heyecan verici bir uygulama geliştirdi! Uzun bir emeğin ve çabanın ardından geliştirdiğimiz THOR adlı mobil uygulamamızla karşınızdayız.Uygulamamız, sizin günlük yaşamınızı kolaylaştırmak ve üniversite deneyiminizi zenginleştirmek amacıyla tasarlandı. Her bir detayını öğrenci ihtiyaçlarına uygun olarak planladık ve uygulamamızı geliştirirken sizin geri bildirimlerinizi dikkate aldık.", 
-      tapCount: 0,
-    ),
-    News(
-      title: 'Yaz Stajı Başvuruları Hakkında',
-      year: 2023,
-      image: "images/staj.jpg",
-      text:"Yaz stajı başvuruları başladı.Eğitiminizi pratikle buluşturarak iş dünyasındaki deneyimlerinizi artırmak için bu fırsatı kaçırmayın.Gerçek projelerde yer alarak, teorik bilgilerinizi pratikte uygulayın ve Alanında uzman profesyonellerden öğrenme şansı yakalayın.",
       tapCount: 0,
     ),
     News(
@@ -37,11 +23,25 @@ class listem {
       text:"Sevgili Öğrenciler! Sizi heyecanlandıran bir haberimiz var! Trakya Kariyer Fuarı, kariyerinize yön vermek, geleceğinize bir adım önce başlamak ve iş dünyasının kapılarını aralamak için mükemmel bir fırsat sunuyor. Bu etkinlik, siz değerli öğrencilerimizi iş dünyasının önde gelen şirketleri ve sektörel liderlerle buluşturacak.",
       tapCount: 0,
     ),
-     News(
+    News(
       title: 'TÜB Algoritma ve Programlama Hackatonu',
       year: 2023,
       image: "images/duyuru.jpg",
       text:"Sevgili Kodlama Severler,Sizi bir kodlama macerasına davet ediyoruz! Trakya Algoritma ve Programlama Hackathonu'na katılın ve kodlama yeteneklerinizi geliştirirken keyifli bir yarışma atmosferinde bulunun. Bu heyecan verici etkinlik, Trakya bölgesindeki öğrencileri, yazılım geliştirme tutkunu profesyonellerle buluşturacak.Gerçek dünya problemlerini çözmeye yönelik zorlu algoritmik görevlerle karşılaşın takımınızla birlikte çalışarak işbirliği ve iletişim becerilerinizi geliştirin.",
+      tapCount: 0,
+    ),
+    News(
+      title: 'KYK Bursları ve Krediler Açıklandı',
+      year: 2023,
+      image: "images/burs.jpg",
+      text:"Kredi ve Yurtlar Kurumu (KYK) olarak, yeni akademik dönemde öğrencilere yönelik sağladığımız burslarımızın sonuçları açıklandı. Heyecanla duyuruyoruz ki, KYK Bursları için başvurular değerlendirilmiş ve destek almaya hak kazanan öğrencilerimiz belirlendi.",
+      tapCount: 0,
+    ),
+    News(
+      title: 'Yaz Stajı Başvuruları Hakkında',
+      year: 2023,
+      image: "images/staj.jpg",
+      text:"Yaz stajı başvuruları başladı.Eğitiminizi pratikle buluşturarak iş dünyasındaki deneyimlerinizi artırmak için bu fırsatı kaçırmayın.Gerçek projelerde yer alarak, teorik bilgilerinizi pratikte uygulayın ve Alanında uzman profesyonellerden öğrenme şansı yakalayın.",
       tapCount: 0,
     ),
     News(
