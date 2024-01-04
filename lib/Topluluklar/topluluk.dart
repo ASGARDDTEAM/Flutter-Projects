@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_project/Topluluklar/toluluk_fonk2.dart';
 import 'package:flutter_project/main/homepage.dart';
-
 
 void main() {
   runApp(const ToplulukMerkezi());
@@ -39,8 +39,12 @@ class _ToplulukMerkeziState extends State<ToplulukMerkezi> {
               backgroundColor: Colors.transparent,
               leading: IconButton(
                 onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
                 },
                 icon: const Icon(Icons.arrow_back_ios),
               ),

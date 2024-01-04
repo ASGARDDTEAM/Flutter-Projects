@@ -10,7 +10,7 @@ import 'package:flutter_project/Topluluklar/topluluk.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'first_page.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,11 +21,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<String> images = [
-    'images/dune.jpg',
-    'images/joker.jpg',
-    'images/thor.jpg',
-    'images/takvim.jpg',
-    'images/download.jpg',
+    'images/feng.jpg',
+    'images/ıam.jpg',
+    'images/helloworld.jpg',
+    'images/codegirl.jpg',
+    'images/yemekhane.png',
+    'images/touch.jpg',
   ];
   void _launchURL() async {
     String url = 'https://www.trakya.edu.tr/yemeklistesi';
@@ -251,9 +252,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                 ),
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
-                },
+               
               ),
               ListTile(
                 leading: const Icon(
@@ -267,9 +266,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                 ),
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
-                },
+                
               ),
               ListTile(
                 leading: const Icon(
@@ -300,7 +297,7 @@ class _HomePageState extends State<HomePage> {
                   builder: (BuildContext context) {
                     return GestureDetector(
                       onTap: () {
-                        if (image == 'images/download.jpg') {
+                        if (image == 'images/yemekhane.png') {
                           _launchURL();
                         }
                       },
@@ -419,8 +416,8 @@ class _HomePageState extends State<HomePage> {
                     }
                   },
                   child: Card(
-                    color: Colors.transparent,
-                    elevation: 5,
+                    color: Color.fromARGB(129, 236, 193, 239),
+                    elevation: 6,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
@@ -482,13 +479,15 @@ class _HomePageState extends State<HomePage> {
                 text: 'HOME',
               ),
               GButton(
-                  icon: Icons.newspaper,
-                  text: 'NEWS',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>  Duyurular()),
-                    );
+                  icon: Icons.fastfood_sharp,
+                  text: 'YEMEKHANE',
+                  onPressed: () async {
+                   String url = 'https://www.trakya.edu.tr/yemeklistesi';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
                   }),
               GButton(
                   icon: Icons.radio,
