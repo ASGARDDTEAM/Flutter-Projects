@@ -27,14 +27,11 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       duration: Duration(seconds: 2),
     );
 
-    _animationController.forward(); // Start the animation
+    _animationController.forward(); 
 
     Future.delayed(Duration(seconds: 2), () {
-      _animationController.reset(); // Reset the animation
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => Gossip()),
-      );
+      _animationController.reset(); 
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Gossip()));
     });
   }
 
