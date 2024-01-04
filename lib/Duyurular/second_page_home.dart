@@ -19,8 +19,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
   @override
   void initState() {
     super.initState();
-    currentNews =
-        widget.shpage; // Başlangıçta widget'ın aldığı haberle başlatılır.
+    currentNews =widget.shpage; // Başlangıçta widget'ın aldığı haberle başlatılır.
   }
 
   void updateNews(News news) {
@@ -70,12 +69,8 @@ class _SecondHomePageState extends State<SecondHomePage> {
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return GestureDetector(
-                  onTap: () {
-                    // Tıklama olunca haber güncellenir.
-                    updateNews(listeNews[index]);
-                  },
-                  child: Container(
-                      ),
+                  onTap: () =>updateNews(listeNews[index]),
+                  child: Container(),
                 );
               },
               childCount: listeNews.length,
