@@ -18,9 +18,11 @@ class FileTransaction extends StatefulWidget {
 class _FiletransactionState extends State<FileTransaction> {
   final TextEditingController tweetController = TextEditingController();
   final TextEditingController commentTextController = TextEditingController();
+  String fixedPath = "C:\\Users\\Senaa\\Desktop\\Flutter-project\\GitProject\\flutter_project\\lib\\ChatterCraft\\texts\\HomeTexts.txt";
 
-  void saveTweetsToFile(String path, List tweets) {
+  void saveTweetsToFile(String fixedPath, String path, List tweets) {
     DosyaIslemleri.writeTweetsToFile(path, widget.tweets);
+    DosyaIslemleri.writeTweetsToFile(fixedPath, widget.tweets);
   }
 
   @override
@@ -37,7 +39,7 @@ class _FiletransactionState extends State<FileTransaction> {
                 onLikePressed: () {
                   setState(() {
                     widget.tweets[tersindex].toggleLike();
-                    saveTweetsToFile(widget.path, widget.tweets);
+                    saveTweetsToFile(fixedPath, widget.path, widget.tweets);
                   });
                 },
                 onReplyPressed: () {
@@ -61,7 +63,7 @@ class _FiletransactionState extends State<FileTransaction> {
                     final newTweet = Tweet(text: tweetText);
                     widget.onTweetSubmitted(newTweet);
                     tweetController.clear();
-                    saveTweetsToFile(widget.path, widget.tweets);
+                    saveTweetsToFile(fixedPath, widget.path, widget.tweets);
                   },
                 ),
               ),
@@ -71,7 +73,7 @@ class _FiletransactionState extends State<FileTransaction> {
                   final newTweet = Tweet(text: tweetController.text);
                   widget.onTweetSubmitted(newTweet);
                   tweetController.clear();
-                  saveTweetsToFile(widget.path, widget.tweets);
+                  saveTweetsToFile(fixedPath, widget.path, widget.tweets);
                 },
               ),
             ],
@@ -114,7 +116,7 @@ class _FiletransactionState extends State<FileTransaction> {
   void addComment(Tweet tweet, String commentText) {
     setState(() {
       tweet.addComment(commentText);
-      saveTweetsToFile(widget.path, widget.tweets);
+      saveTweetsToFile(fixedPath, widget.path, widget.tweets);
     });
   }
 }

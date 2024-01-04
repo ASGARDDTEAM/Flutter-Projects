@@ -62,7 +62,6 @@ class _TagPage extends State<TagPage> {
             widget.onTweetSubmitted(newTweet);
 
             List<Tweet> updatedTweets = await DosyaIslemleri.readTweetsFromFile(PathList().list2[widget.index]);
-
             setState(() {
               widget.tweets.clear();
               widget.tweets.addAll(updatedTweets);

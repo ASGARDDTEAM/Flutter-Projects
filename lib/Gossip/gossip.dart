@@ -223,6 +223,7 @@ class _GossipState extends State<Gossip> {
       first = false;
     }
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Container(
           decoration: BoxDecoration(
