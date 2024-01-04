@@ -10,7 +10,7 @@ import 'package:flutter_project/Topluluklar/topluluk.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'first_page.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -252,9 +252,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                 ),
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
-                },
+               
               ),
               ListTile(
                 leading: const Icon(
@@ -268,9 +266,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                 ),
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => FirstPage()));
-                },
+                
               ),
               ListTile(
                 leading: const Icon(
