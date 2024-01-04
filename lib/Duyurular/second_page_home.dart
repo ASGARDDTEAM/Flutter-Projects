@@ -12,10 +12,10 @@ class SecondHomePage extends StatefulWidget {
 }
 
 class _SecondHomePageState extends State<SecondHomePage> {
-  late News
-      currentNews; // Burada tılanılan haber tutulacak.News türünde bir nesne.
-//late dart dilinde başlangıç değeri belli bir süre sonra atanacak değişkenler için kullanılır.
+ //late dart dilinde başlangıç değeri belli bir süre sonra atanacak değişkenler için kullanılır.
+  late News currentNews; // Burada tılanılan haber tutulacak.News türünde bir nesne.
   List<News> listeNews = listem.newsList;
+
   @override
   void initState() {
     super.initState();
@@ -25,7 +25,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
 
   void updateNews(News news) {
     setState(() {
-      currentNews = news; // Yeni bir haber geldiğinde güncellenir.
+      currentNews = news; // Yeni bir habere tıklandığında güncellenir.
     });
   }
 
@@ -42,8 +42,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
                 color: Colors.blue,
               ),
               onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Home()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
               },
             ),
             expandedHeight: 200,
@@ -53,8 +52,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
                 fit: BoxFit.cover,
               ),
               title: Align(
-                alignment:
-                    Alignment.bottomLeft, // Container'ı alt sol köşeye hizala
+                alignment:Alignment.bottomLeft, // Container'ı alt sol köşeye hizala
                 child: Container(
                   child: Text(
                     currentNews.title,

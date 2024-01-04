@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_project/GirisSayfasi/model/User.dart';
 import 'package:flutter_project/GirisSayfasi/model/my_button.dart';
@@ -17,11 +16,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // Text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  // Sign user in method
+
 bool signUserIn(BuildContext context) {
   String ad = usernameController.text;
   String parola = passwordController.text;
@@ -30,20 +28,11 @@ bool signUserIn(BuildContext context) {
   for (Kullanici kullanici in kullanicilarListesi.kListesi) {
     if (kullanici.kullaniciAdi == ad && kullanici.Sifre == parola) {
       userFound=true;
-
-
-  
-
-      // Başarılı bir giriş yaptıktan sonra 2 saniye bekleyip SecondPage'e geçiş yap
-    
-        
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => HomePage()),
         );
-    
-
-      return true; // Exit the loop once a matching user is found
+      return true; 
     }
   }
 
@@ -66,13 +55,8 @@ bool signUserIn(BuildContext context) {
       },
     );
   }
-
-  return false;// Return false explicitly in case the loop is not executed
+  return false;
 }
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,18 +66,10 @@ bool signUserIn(BuildContext context) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
-
-              // Logo
-              Image.asset(
-                "images/logo.png",
-
-                ),
-              
-
+              Image.asset("images/logo.png"),
+            
               const SizedBox(height:8),
 
-              // Welcome back, you've been missed!
                ShaderMask(
                 shaderCallback: (Rect bounds) {
                   return LinearGradient(
@@ -120,11 +96,6 @@ bool signUserIn(BuildContext context) {
 
               SizedBox(height: 10),
 
-              
-    
-          
-
-              // Username textfield
               MyTextField(
                 controller: usernameController,
                 hintText: 'kullanıcıadı@thor.com',
@@ -133,7 +104,6 @@ bool signUserIn(BuildContext context) {
 
               const SizedBox(height: 10),
 
-              // Password textfield
               MyTextField(
                 controller: passwordController,
                 hintText: 'Şifre',
@@ -142,32 +112,9 @@ bool signUserIn(BuildContext context) {
 
               const SizedBox(height: 10),
 
-              // Forgot password?
-              
+              MyButton(onTap:()=>signUserIn(context)),
 
-              
-
-              // Sign in button
-              MyButton(
-                onTap:()=>signUserIn(context),
-              ),
-
-              // const SizedBox(height: 50),
-
-              // // Or continue with
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              //   child: Row(
-              //     children: [
-              //       Expanded(
-              //         child: Divider(
-              //           thickness: 0.5,
-              //           color: Colors.grey[400],
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
+       
             ],
           ),
         ),
