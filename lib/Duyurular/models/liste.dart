@@ -20,16 +20,28 @@ class listem {
       title: "Öğrencilerimizin Geliştirdiği Mobil Uygulama Google Play'de",
       year: 2022,
       image: "images/uygulama2.jpg",
-      text:
-          "Where can I get some? There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+      text:"Trakya Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencileri sizin için heyecan verici bir uygulama geliştirdi! Uzun bir emeğin ve çabanın ardından geliştirdiğimiz THOR adlı mobil uygulamamızla karşınızdayız.Uygulamamız, sizin günlük yaşamınızı kolaylaştırmak ve üniversite deneyiminizi zenginleştirmek amacıyla tasarlandı. Her bir detayını öğrenci ihtiyaçlarına uygun olarak planladık ve uygulamamızı geliştirirken sizin geri bildirimlerinizi dikkate aldık.", 
       tapCount: 0,
     ),
     News(
       title: 'Yaz Stajı Başvuruları Hakkında',
       year: 2023,
       image: "images/staj.jpg",
-      text:
-          "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,  comes from a line in section 1.10.32 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from  by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+      text:"Yaz stajı başvuruları başladı.Eğitiminizi pratikle buluşturarak iş dünyasındaki deneyimlerinizi artırmak için bu fırsatı kaçırmayın.Gerçek projelerde yer alarak, teorik bilgilerinizi pratikte uygulayın ve Alanında uzman profesyonellerden öğrenme şansı yakalayın.",
+      tapCount: 0,
+    ),
+    News(
+      title: 'Trakya Kariyer Fuarı Etkinliği',
+      year: 2023,
+      image: "images/kariyer.jpg",
+      text:"Sevgili Öğrenciler! Sizi heyecanlandıran bir haberimiz var! Trakya Kariyer Fuarı, kariyerinize yön vermek, geleceğinize bir adım önce başlamak ve iş dünyasının kapılarını aralamak için mükemmel bir fırsat sunuyor. Bu etkinlik, siz değerli öğrencilerimizi iş dünyasının önde gelen şirketleri ve sektörel liderlerle buluşturacak.",
+      tapCount: 0,
+    ),
+     News(
+      title: 'TÜB Algoritma ve Programlama Hackatonu',
+      year: 2023,
+      image: "images/duyuru.jpg",
+      text:"Sevgili Kodlama Severler,Sizi bir kodlama macerasına davet ediyoruz! Trakya Algoritma ve Programlama Hackathonu'na katılın ve kodlama yeteneklerinizi geliştirirken keyifli bir yarışma atmosferinde bulunun. Bu heyecan verici etkinlik, Trakya bölgesindeki öğrencileri, yazılım geliştirme tutkunu profesyonellerle buluşturacak.Gerçek dünya problemlerini çözmeye yönelik zorlu algoritmik görevlerle karşılaşın takımınızla birlikte çalışarak işbirliği ve iletişim becerilerinizi geliştirin.",
       tapCount: 0,
     ),
     News(
@@ -40,34 +52,11 @@ class listem {
           "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined ",
       tapCount: 0,
     ),
-    News(
-      title: 'Trakya Kariyer Fuarı Etkinliği',
-      year: 2023,
-      image: "images/kariyer.jpg",
-      text:
-          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...",
-      tapCount: 0,
-    ),
-    News(
-      title: 'TÜB Algoritma ve Programlama Hackatonu',
-      year: 2023,
-      image: "images/duyuru.jpg",
-      text:
-          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...",
-      tapCount: 0,
-    ),
+
     News(
       title: 'OBS Güncellendi',
       year: 2024,
       image: "images/obs.jpg",
-      text:
-          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...",
-      tapCount: 0,
-    ),
-    News(
-      title: 'Trakya Kariyer Fuarı Etkinliği',
-      year: 2023,
-      image: "images/duyuru.jpg",
       text:
           "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...",
       tapCount: 0,
