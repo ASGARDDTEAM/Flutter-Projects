@@ -20,7 +20,7 @@ class _ClickImageState extends State<ClickImage> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 224, 146, 236),
+          backgroundColor: const Color.fromARGB(255, 224, 146, 236),
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             flexibleSpace: Container(
@@ -59,7 +59,7 @@ class _ClickImageState extends State<ClickImage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Text(LessonMap.dict2[widget.teacher.toString()][index], style: TextStyle(fontFamily: "Play fair Display")),
+                      Text(LessonMap.dict2[widget.teacher.toString()][index], style: const TextStyle(fontFamily: "Play fair Display")),
                     ],
                   ),
                 ),

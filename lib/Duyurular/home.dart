@@ -207,7 +207,7 @@ class _DuyurularState extends State<Duyurular> {
                           liste[index].tapCount++;
                         });
                         filefunctions.writeTapCountsToFile(
-                          r"C:\Users\PC\Desktop\workonnnsonn\flutter_application_1\lib\file\tapCountfile.txt",
+                          r"C:\Users\Senaa\Desktop\Flutter-project\GitProject\flutter_project\lib\Duyurular\file\tapCountfile.txt",
                           listem.newsList,
                         );
                         Navigator.push(

@@ -10,6 +10,7 @@ class TeacherCircleAvatar extends StatefulWidget {
   String teacher;
   int number;
 
+  // ignore: use_key_in_widget_constructors
   TeacherCircleAvatar(this.imagePath, this.number, this.teacher);
 
   @override
@@ -23,9 +24,9 @@ class _TeacherCircleAvatar extends State<TeacherCircleAvatar> {
       decoration: BoxDecoration(
           border: Border.all(
         width: 10,
-        color: Color.fromARGB(255, 137, 106, 148),
+        color: const Color.fromARGB(255, 137, 106, 148),
       )),
-      padding: EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 20),
       child: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +57,7 @@ class _TeacherCircleAvatar extends State<TeacherCircleAvatar> {
                   itemBuilder: (context, index) => ListTile(
                     title: Text(
                       TeacherMap.dict[widget.number.toString()]["name"] + "\n" + "Email: " + "\n" + TeacherMap.dict[widget.number.toString()]["email"],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Play fair Display",
@@ -64,7 +65,7 @@ class _TeacherCircleAvatar extends State<TeacherCircleAvatar> {
                     ),
                     subtitle: Text(
                       "GitHub:" + "\n" + TeacherMap.dict[widget.number.toString()]["git"],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Play fair Display",

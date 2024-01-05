@@ -9,6 +9,7 @@ class Fonksiyon extends StatefulWidget {
   String aciklama;
   String keytopluluk;
 
+  // ignore: use_key_in_widget_constructors
   Fonksiyon(this.imagePath, this.toplulukName, this.toplulukFullName, this.aciklama, this.keytopluluk);
 
   @override
@@ -21,7 +22,7 @@ class _FonksiyonState extends State<Fonksiyon> {
     return Container(
       height: 350,
       width: 350,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
             Color.fromRGBO(147, 195, 249, 0.9),
@@ -35,7 +36,7 @@ class _FonksiyonState extends State<Fonksiyon> {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.zero,
           ),
         ),
@@ -50,8 +51,8 @@ class _FonksiyonState extends State<Fonksiyon> {
               backgroundColor: Colors.white,
               backgroundImage: AssetImage(widget.imagePath),
             ),
-            Text(widget.toplulukName, style: TextStyle(color: Colors.white)),
-            Text(widget.toplulukFullName, style: TextStyle(color: Colors.white)),
+            Text(widget.toplulukName, style: const TextStyle(color: Colors.white)),
+            Text(widget.toplulukFullName, style: const TextStyle(color: Colors.white)),
           ],
         ),
       ),

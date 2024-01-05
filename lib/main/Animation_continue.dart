@@ -6,6 +6,7 @@ class AnimationPage extends StatefulWidget {
   AnimationPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AnimationPageState createState() => _AnimationPageState();
 }
 
@@ -16,13 +17,14 @@ class _AnimationPageState extends State<AnimationPage> with SingleTickerProvider
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       vsync: this,
     );
 
-    Future.delayed(Duration(seconds: 1), () async {
+    Future.delayed(const Duration(seconds: 1), () async {
       await _controller.forward();
 
+      // ignore: use_build_context_synchronously
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => LoginPage()),
       );
@@ -40,7 +42,7 @@ class _AnimationPageState extends State<AnimationPage> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(0, 0, 0, 1),
+      backgroundColor: const Color.fromRGBO(0, 0, 0, 1),
       body: Center(
         child: GestureDetector(
           onTap: () {
@@ -53,7 +55,7 @@ class _AnimationPageState extends State<AnimationPage> with SingleTickerProvider
             }
           },
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color.fromRGBO(197, 154, 250, 1),

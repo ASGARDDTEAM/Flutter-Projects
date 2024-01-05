@@ -73,9 +73,7 @@ class _SecondHomePageState extends State<SecondHomePage> {
                     // Tıklama olunca haber güncellenir.
                     updateNews(listeNews[index]);
                   },
-                  child: Container(
-                      // GestureDetector'ın içeriği, tıklanabilir alanı temsil eder.
-                      ),
+                  child: Container(),
                 );
               },
               childCount: listeNews.length,

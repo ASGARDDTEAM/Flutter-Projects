@@ -17,13 +17,13 @@ class _ToplulukMerkeziState extends State<ToplulukMerkezi> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 115, 19, 19))),
+      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 115, 19, 19))),
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 235, 244, 255),
+        backgroundColor: const Color.fromARGB(255, 235, 244, 255),
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(75),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color.fromRGBO(108, 115, 251, 0.9),
@@ -60,10 +60,10 @@ class _ToplulukMerkeziState extends State<ToplulukMerkezi> {
         body: ListWheelScrollView(
           perspective: 0.001,
           itemExtent: 350,
-          physics: FixedExtentScrollPhysics(),
-          onSelectedItemChanged: (index) => Text(
+          physics: const FixedExtentScrollPhysics(),
+          onSelectedItemChanged: (index) => const Text(
             'aa',
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
           children: ListeyeAtma.toplulukElevateButton(),
         ),

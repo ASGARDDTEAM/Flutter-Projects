@@ -18,11 +18,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // Text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  // Sign user in method
   bool signUserIn(BuildContext context) {
     String ad = usernameController.text;
     String parola = passwordController.text;
@@ -31,31 +29,26 @@ class _LoginPageState extends State<LoginPage> {
     for (Kullanici kullanici in kullanicilarListesi.kListesi) {
       if (kullanici.kullaniciAdi == ad && kullanici.Sifre == parola) {
         userFound = true;
-
-        // Başarılı bir giriş yaptıktan sonra 2 saniye bekleyip SecondPage'e geçiş yap
-
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
-
-        return true; // Exit the loop once a matching user is found
+        return true;
       }
     }
-
     if (!userFound) {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Hata'),
-            content: Text('Yanlış Kullanıcı adı veya Şifre!'),
+            title: const Text('Hata'),
+            content: const Text('Yanlış Kullanıcı adı veya Şifre!'),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text('Tamam'),
+                child: const Text('Tamam'),
               ),
             ],
           );
@@ -63,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
       );
     }
 
-    return false; // Return false explicitly in case the loop is not executed
+    return false;
   }
 
   @override
@@ -71,23 +64,21 @@ class _LoginPageState extends State<LoginPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromARGB(255, 254, 245, 255),
+        backgroundColor: const Color.fromARGB(255, 254, 245, 255),
         body: SafeArea(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Logo
                 Image.asset(
                   "images/logo.png",
                 ),
 
                 const SizedBox(height: 8),
 
-                // Welcome back, you've been missed!
                 ShaderMask(
                   shaderCallback: (Rect bounds) {
-                    return LinearGradient(
+                    return const LinearGradient(
                       colors: [
                         Color.fromRGBO(197, 154, 250, 1),
                         Color.fromRGBO(147, 195, 249, 1.0)
@@ -103,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     'THOR',
                     style: GoogleFonts.silkscreen(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                         color: Color.fromARGB(255, 238, 224, 240),
                         fontWeight: FontWeight.normal,
                         fontSize: 55.0,
@@ -112,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 // Username textfield
                 MyTextField(
@@ -132,29 +123,9 @@ class _LoginPageState extends State<LoginPage> {
 
                 const SizedBox(height: 10),
 
-                // Forgot password?
-
-                // Sign in button
                 MyButton(
                   onTap: () => signUserIn(context),
                 ),
-
-                // const SizedBox(height: 50),
-
-                // // Or continue with
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                //   child: Row(
-                //     children: [
-                //       Expanded(
-                //         child: Divider(
-                //           thickness: 0.5,
-                //           color: Colors.grey[400],
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
               ],
             ),
           ),

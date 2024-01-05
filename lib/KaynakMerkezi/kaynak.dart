@@ -25,7 +25,7 @@ class _KaynakMerkeziState extends State<KaynakMerkezi> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(75),
           child: AppBar(
-            backgroundColor: Color(0xff896b95),
+            backgroundColor: const Color(0xff896b95),
             flexibleSpace: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(

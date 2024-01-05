@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers, deprecated_member_use
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/ChatterCraft/home_view.dart';
@@ -47,10 +47,10 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(246, 234, 250, 1),
+        backgroundColor: const Color.fromRGBO(246, 234, 250, 1),
         appBar: AppBar(
           flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color.fromARGB(255, 60, 51, 149),
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
           ),
           title: ShaderMask(
             shaderCallback: (Rect bounds) {
-              return LinearGradient(
+              return const LinearGradient(
                 colors: [
                   Color.fromRGBO(218, 195, 246, 1),
                   Color.fromRGBO(206, 225, 245, 1)
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
             child: Text(
               'thor',
               style: GoogleFonts.silkscreen(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   color: Color.fromARGB(255, 238, 224, 240),
                   fontWeight: FontWeight.normal,
                   fontSize: 50.0,
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
         ),
         drawer: Drawer(
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color.fromARGB(255, 60, 51, 149),
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Duyurular()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Duyurular()));
                   },
                 ),
                 ListTile(
@@ -201,11 +201,11 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 ListTile(
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.diversity_3,
                     color: Colors.white,
                   ),
-                  title: Text(
+                  title: const Text(
                     'Topluluklar',
                     style: TextStyle(
                       fontSize: 20,
@@ -213,7 +213,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ToplulukMerkezi()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ToplulukMerkezi()));
                   },
                 ),
                 ListTile(
@@ -229,15 +229,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => KaynakMerkezi()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const KaynakMerkezi()));
                   },
                 ),
-                ListTile(
-                  leading: const Icon(
+                const ListTile(
+                  leading: Icon(
                     Icons.privacy_tip,
                     color: Colors.white,
                   ),
-                  title: const Text(
+                  title: Text(
                     'Güvenlik',
                     style: TextStyle(
                       fontSize: 20,
@@ -245,12 +245,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                ListTile(
-                  leading: const Icon(
+                const ListTile(
+                  leading: Icon(
                     Icons.settings,
                     color: Colors.white,
                   ),
-                  title: const Text(
+                  title: Text(
                     'Ayarlar',
                     style: TextStyle(
                       fontSize: 20,
@@ -293,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.symmetric(horizontal: 5.0),
+                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
                           child: Image.asset(
                             image,
                             fit: BoxFit.cover,
@@ -307,8 +307,8 @@ class _HomePageState extends State<HomePage> {
                   height: 200.0,
                   enableInfiniteScroll: true,
                   autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 3),
-                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayInterval: const Duration(seconds: 3),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
                   autoPlayCurve: Curves.fastOutSlowIn,
                   pauseAutoPlayOnTouch: true,
                   aspectRatio: 2.0,
@@ -321,15 +321,15 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 19,
                   mainAxisSpacing: 19,
                 ),
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 6,
                 itemBuilder: (BuildContext context, int index) {
                   IconData iconData;
@@ -376,7 +376,7 @@ class _HomePageState extends State<HomePage> {
                         case 0:
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Duyurular()),
+                            MaterialPageRoute(builder: (context) => const Duyurular()),
                           );
                           break;
                         case 1:
@@ -394,19 +394,19 @@ class _HomePageState extends State<HomePage> {
                         case 3:
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ToplulukMerkezi()),
+                            MaterialPageRoute(builder: (context) => const ToplulukMerkezi()),
                           );
                           break;
                         case 4:
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => KaynakMerkezi()),
+                            MaterialPageRoute(builder: (context) => const KaynakMerkezi()),
                           );
                           break;
                       }
                     },
                     child: Card(
-                      color: Color.fromARGB(129, 236, 193, 239),
+                      color: const Color.fromARGB(129, 236, 193, 239),
                       elevation: 6,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
@@ -416,13 +416,13 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Icon(
                             iconData,
-                            color: Color.fromRGBO(97, 76, 122, 1),
+                            color: const Color.fromRGBO(97, 76, 122, 1),
                             size: 60,
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
                             labelText,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color.fromRGBO(97, 76, 122, 1),
                               fontSize: 16,
                             ),
@@ -439,7 +439,7 @@ class _HomePageState extends State<HomePage> {
         bottomNavigationBar: Container(
           //alttaki bar için
           height: 70,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
                 Color.fromARGB(255, 60, 51, 149),
@@ -454,15 +454,15 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
+            padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0),
             child: GNav(
-              color: Color.fromARGB(255, 255, 255, 255),
-              activeColor: Color.fromARGB(255, 246, 186, 255),
-              tabBackgroundColor: Color.fromARGB(255, 54, 54, 54),
+              color: const Color.fromARGB(255, 255, 255, 255),
+              activeColor: const Color.fromARGB(255, 246, 186, 255),
+              tabBackgroundColor: const Color.fromARGB(255, 54, 54, 54),
               gap: 1,
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               tabs: [
-                GButton(
+                const GButton(
                   icon: Icons.home,
                   text: 'HOME',
                 ),

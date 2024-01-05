@@ -87,22 +87,22 @@ class _GossipState extends State<Gossip> {
       return ClipRRect(
         borderRadius: BorderRadius.circular(4.0),
         child: Container(
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(4),
           color: Colors.black.withOpacity(0.5),
           child: Column(
             children: [
               Text("${containerwl[index].title.toUpperCase()}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0,
                   )),
               ClipRRect(
                 borderRadius: BorderRadius.circular(4.0),
-                child: Container(padding: EdgeInsets.all(4.0), child: Image.file(File("${containerwl[index].imagefromgalleriypath}"))),
+                child: Container(padding: const EdgeInsets.all(4.0), child: Image.file(File("${containerwl[index].imagefromgalleriypath}"))),
               ),
               Text("${containerwl[index].text.replaceAll("é", ",")}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16.0,
                   ))
@@ -114,19 +114,19 @@ class _GossipState extends State<Gossip> {
       return ClipRRect(
         borderRadius: BorderRadius.circular(4.0),
         child: Container(
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(4),
           color: Colors.black.withOpacity(0.5),
           child: Column(
             children: [
               Text("${containerwl[index].title.toUpperCase()}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0,
                   )),
-              ClipRRect(borderRadius: BorderRadius.circular(4.0), child: Container(padding: EdgeInsets.all(4.0), child: Image.network("${containerwl[index].imagefromaddresim}", fit: BoxFit.cover))),
+              ClipRRect(borderRadius: BorderRadius.circular(4.0), child: Container(padding: const EdgeInsets.all(4.0), child: Image.network("${containerwl[index].imagefromaddresim}", fit: BoxFit.cover))),
               Text("${containerwl[index].text.replaceAll("é", ",")}",
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16.0,
                   ))
@@ -138,18 +138,18 @@ class _GossipState extends State<Gossip> {
     return ClipRRect(
       borderRadius: BorderRadius.circular(4.0),
       child: Container(
-        padding: EdgeInsets.all(4),
+        padding: const EdgeInsets.all(4),
         color: Colors.black.withOpacity(0.5),
         child: Column(
           children: [
             Text("${containerwl[index].title.toUpperCase()}",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 25.0,
                 )),
             Text("${containerwl[index].text.replaceAll("é", ",")}",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
                 ))
@@ -192,7 +192,7 @@ class _GossipState extends State<Gossip> {
                 labelText: titlename,
                 labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)), //bu metne tıklağında başlık gibi davranıtor
                 enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white.withOpacity(0.5))),
-                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+                focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
                 hintText: hintText,
                 hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
 
@@ -225,7 +225,7 @@ class _GossipState extends State<Gossip> {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: LinearGradient(
             colors: [
               Color(0xffee2d88),
@@ -243,24 +243,24 @@ class _GossipState extends State<Gossip> {
                   slivers: [
                     SliverAppBar(
                       backgroundColor: Colors.black,
-                      title: Text("W H I S P E R G P T"),
+                      title: const Text("W H I S P E R G P T"),
                       expandedHeight: 200,
                       flexibleSpace: FlexibleSpaceBar(
                           background: Container(
                         color: const Color(0xffa82060),
                       )),
                       leading: IconButton(
-                          icon: Icon(Icons.arrow_back_ios_new),
+                          icon: const Icon(Icons.arrow_back_ios_new),
                           onPressed: () {
                             Navigator.of(context).pop();
                           }),
                     ),
                     SliverToBoxAdapter(
                       child: MasonryGridView.builder(
-                        gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                         ),
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: containerwl.length,
                         shrinkWrap: true,
                         itemBuilder: ((context, i) => Padding(
@@ -275,7 +275,7 @@ class _GossipState extends State<Gossip> {
             ]),
             floatingActionButton: FloatingActionButton(
               backgroundColor: Colors.white,
-              child: Icon(
+              child: const Icon(
                 Icons.add,
                 color: Color(0xffa82060),
               ),
@@ -295,13 +295,13 @@ class _GossipState extends State<Gossip> {
                               minChildSize: 0.3, //bu değerden küçük olunca otomatik kendini aşağı atıp kapanıyor
 
                               builder: (_, controller) => Container(
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Color(0xffa82060),
                                   borderRadius: BorderRadius.vertical(
                                       //yuvarlak kenar için
                                       top: Radius.circular(20.0)),
                                 ),
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: Container(
                                   child: Column(
                                     children: [
@@ -316,7 +316,7 @@ class _GossipState extends State<Gossip> {
                                                   decoration: BoxDecoration(
                                                     border: Border.all(width: 4.0, color: Colors.black.withOpacity(0.7)),
                                                     color: Colors.black.withOpacity(0.5),
-                                                    borderRadius: BorderRadius.all(//yuvarlak kenar için
+                                                    borderRadius: const BorderRadius.all(//yuvarlak kenar için
                                                         Radius.circular(20.0)),
                                                   ),
                                                   child: TextButton(
@@ -337,7 +337,7 @@ class _GossipState extends State<Gossip> {
                                                                   color: Colors.white.withOpacity(0.9),
                                                                 ),
                                                               )
-                                                            : Text(
+                                                            : const Text(
                                                                 "",
                                                                 style: TextStyle(color: Color.fromARGB(255, 143, 68, 156)),
                                                               )
@@ -348,7 +348,7 @@ class _GossipState extends State<Gossip> {
                                                 decoration: BoxDecoration(
                                                   border: Border.all(width: 4.0, color: Colors.black.withOpacity(0.7)),
                                                   color: Colors.black.withOpacity(0.5),
-                                                  borderRadius: BorderRadius.all(//yuvarlak kenar için
+                                                  borderRadius: const BorderRadius.all(//yuvarlak kenar için
                                                       Radius.circular(20.0)),
                                                 ),
                                                 child: Padding(
@@ -395,9 +395,9 @@ class _GossipState extends State<Gossip> {
                                                           onPressed: () {
                                                             Navigator.of(context).pop();
                                                           },
-                                                          child: Text("Tamam"),
+                                                          child: const Text("Tamam"),
                                                         ),
-                                                      ], title: Text("Uyarı!"), contentPadding: EdgeInsets.all(20.0), content: Text("Metin veya başlık eksik girdin sanınım!")));
+                                                      ], title: const Text("Uyarı!"), contentPadding: const EdgeInsets.all(20.0), content: const Text("Metin veya başlık eksik girdin sanınım!")));
                                             } else if (pickedimage != '' && _selectedImage != null) {
                                               showDialog(
                                                   context: context,
@@ -407,16 +407,16 @@ class _GossipState extends State<Gossip> {
                                                             pickedimage = '';
                                                             Navigator.of(context).pop();
                                                           },
-                                                          child: Text("Galeri"),
+                                                          child: const Text("Galeri"),
                                                         ),
                                                         TextButton(
                                                           onPressed: () {
                                                             _selectedImage = null;
                                                             Navigator.of(context).pop();
                                                           },
-                                                          child: Text("Fotoğraf veya gif seçim"),
+                                                          child: const Text("Fotoğraf veya gif seçim"),
                                                         ),
-                                                      ], title: Text("Uyarı!"), contentPadding: EdgeInsets.all(20.0), content: Text("Fotoğraf galeri ve seçim özellliklerini aynı anda kullanamazsın. Hangisini kullanmak istersin?")));
+                                                      ], title: const Text("Uyarı!"), contentPadding: const EdgeInsets.all(20.0), content: const Text("Fotoğraf galeri ve seçim özellliklerini aynı anda kullanamazsın. Hangisini kullanmak istersin?")));
                                             } else {
                                               showDialog(
                                                   context: context,
@@ -434,18 +434,19 @@ class _GossipState extends State<Gossip> {
 
                                                             Navigator.of(context).pop();
                                                           },
-                                                          child: Text("Evet"),
+                                                          child: const Text("Evet"),
                                                         ),
                                                         TextButton(
                                                           onPressed: () {
                                                             Navigator.of(context).pop();
                                                           },
-                                                          child: Text("Hayır"),
+                                                          child: const Text("Hayır"),
                                                         ),
-                                                      ], title: Text("Uyarı!"), contentPadding: EdgeInsets.all(20.0), content: Text("Hey,eklediğin şey sonsuza kadar kalacak farkındasın değil mi?")));
+                                                      ], title: const Text("Uyarı!"), contentPadding: const EdgeInsets.all(20.0), content: const Text("Hey,eklediğin şey sonsuza kadar kalacak farkındasın değil mi?")));
                                             }
                                           });
                                         },
+                                        style: ElevatedButton.styleFrom(backgroundColor: Colors.black.withOpacity(0.5)),
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           mainAxisSize: MainAxisSize.min,
@@ -460,7 +461,6 @@ class _GossipState extends State<Gossip> {
                                             ),
                                           ],
                                         ),
-                                        style: ElevatedButton.styleFrom(backgroundColor: Colors.black.withOpacity(0.5)),
                                       ),
                                     ],
                                   ),
